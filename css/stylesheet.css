@@ -15,8 +15,13 @@ body { background-color: #eeedef; font-family: 'akzidenz-cn'; }
     
 .wrapper { max-width: 960px; margin: 0px auto; }
 .header-one { text-align: center; background-color: #eeedef; margin-top: 64px; min-height: 640px; position:relative; }
-.header-one .owl-carousel-one {  }
 .header-one .owl-carousel-one .item { position: relative;  height: 640px; opacity: 0; }
+.header-one .owl-carousel-one .owl-buttons { position: absolute; z-index:1; top: 280px; left: 0px; right: 0px; margin: 0px auto; height: 75px; max-width: 1000px; width: 100%; }
+.header-one .owl-carousel-one .owl-prev { width: 36px; height: 120px; position: absolute;  left: 12px; background-image: url("../img/left-arrow.png"); }
+.header-one .owl-carousel-one .owl-next { width: 36px; height: 120px; position: absolute; right: 12px; background-image: url("../img/right-arrow.png"); }
+.header-one .owl-carousel-one .owl-pagination { position: absolute; top: 600px; left: 0; right: 0px; margin: 0 auto; }
+.header-one .owl-carousel-one .owl-pagination .owl-page { display: inline-block; width: 16px; height: 16px; background-color: #dedede; margin: 4px; border-radius: 50%; }
+.header-one .owl-carousel-one .owl-pagination .owl-page.active { background-color: #b3b3b3; }
 .header-one .loader { position: absolute; left: 0; right: 0; margin: 0 auto; top: 320px; color: #666; font-weight: normal; }
 .header-one h1 { font-family: 'akzidenz-light-cn'; font-weight: normal; text-transform: uppercase; color: #666; font-size: 45px; position: absolute; left: 0; right: 0; top: 80px; margin: 0 auto; padding: 0 12px; }
 .header-one a { text-transform: uppercase; color: #666; font-size: 20px; position: absolute; left: 0; right: 0; bottom: 64px; margin: 0 auto; text-decoration: none; }
@@ -65,11 +70,12 @@ body { background-color: #eeedef; font-family: 'akzidenz-cn'; }
 }
 @media(max-width:800px){
     .nav .left { height: 48px; margin: 8px 0px; }
-    .header-one h1 { top: 32px; } /*lower title*/
+    
 }
 @media(max-width:640px){
     .header-one video { display: none; }
     .header-one .fallback { display: block; width: auto; max-width: 100%; }
+	.header-one h1 { top: 32px; } /*lower title*/
 }
 @media(max-width:480px){
     .nav .right { }

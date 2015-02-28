@@ -159,7 +159,7 @@
 		<script>
 			$( document ).ready(function() {
 				$('.gallery').finalTilesGallery({ margin: 12, gridCellSize: 12, imageSizeFactor: 1, minTileWidth: 100});
-				$(".header-one .owl-carousel-one").owlCarousel({navigation : false,slideSpeed : 300,paginationSpeed : 400,pagination: true,autoPlay: false,singleItem : true,itemsScaleUp:true,afterMove : animate	});
+				$(".header-one .owl-carousel-one").owlCarousel({navigation:true, navigationText:["",""], slideSpeed : 300, pagination: true, paginationSpeed : 400, autoPlay: false, singleItem : true, mouseDrag:false, afterMove : animate	});
 				$(".section-two .owl-carousel-one").owlCarousel({items:5,itemsDesktop : [5000,1],itemsDesktopSmall: [640,1],itemsTablet: [480,1],itemsMobile : false,navigation : true,slideSpeed : 300,	rewindNav : false,paginationSpeed : 400,navigationText: ["",""],pagination: false,autoPlay: false	});
 				$(window).trigger("resize"); //trigger resize event
 			});
@@ -176,17 +176,17 @@
 				var i = ($(".header-one .owl-carousel-one").data('owlCarousel').currentItem+1);
 				$( ".header-one .owl-carousel-one" ).each(function( index ) {	$( this ).find( ".item:eq("+(i-1)+") .logo" ).fadeOut(0);});
 				if (!isMobile()) $('#vid'+i).get(0).play(); //play if not mobile
-				else { displayGraphic($('#vid'+i)); }
+				else { displayGraphic($('#vid'+i),0); }
 			}
 			
 			//fade in logo after each video plays completely
 			$('.header-one video').each(function(index){ 
 				$(this).attr('id','vid'+(index+1));
-				if (!isMobile()){ $(this).on('ended',function(){ displayGraphic(this); }); }
+				if (!isMobile()){ $(this).on('ended',function(){ displayGraphic(this,500); }); }
 			});
-			function displayGraphic(e){
+			function displayGraphic(e,speed){
 				var i = ($(".header-one .owl-carousel-one").data('owlCarousel').currentItem+1);
-				$(".header-one .owl-carousel-one").each(function(index){ $(this).find(".item:eq("+(i-1)+") .logo").fadeIn(500);});
+				$(".header-one .owl-carousel-one").each(function(index){ $(this).find(".item:eq("+(i-1)+") .logo").fadeIn(speed);});
 			}
 			function isMobile(){ return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? true:false; }
 		</script>
