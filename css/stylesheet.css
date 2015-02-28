@@ -15,15 +15,14 @@ body { background-color: #eeedef; font-family: 'akzidenz-cn'; }
     
 .wrapper { max-width: 960px; margin: 0px auto; }
 .header-one { text-align: center; background-color: #eeedef; margin-top: 64px; min-height: 640px; position:relative; }
+.header-one .prev { width: 36px; height: 120px; position: absolute;  left: 12px; top: 280px; cursor: pointer; }
+.header-one .next { width: 36px; height: 120px; position: absolute; right: 12px; top: 280px; cursor: pointer; }
 .header-one .owl-carousel-one .item { position: relative;  height: 640px; opacity: 0; }
-.header-one .owl-carousel-one .owl-buttons { position: absolute; z-index:1; top: 280px; left: 0px; right: 0px; margin: 0px auto; height: 75px; max-width: 1000px; width: 100%; }
-.header-one .owl-carousel-one .owl-prev { width: 36px; height: 120px; position: absolute;  left: 12px; background-image: url("../img/left-arrow.png"); }
-.header-one .owl-carousel-one .owl-next { width: 36px; height: 120px; position: absolute; right: 12px; background-image: url("../img/right-arrow.png"); }
 .header-one .owl-carousel-one .owl-pagination { position: absolute; top: 600px; left: 0; right: 0px; margin: 0 auto; }
 .header-one .owl-carousel-one .owl-pagination .owl-page { display: inline-block; width: 16px; height: 16px; background-color: #dedede; margin: 4px; border-radius: 50%; }
 .header-one .owl-carousel-one .owl-pagination .owl-page.active { background-color: #b3b3b3; }
 .header-one .loader { position: absolute; left: 0; right: 0; margin: 0 auto; top: 320px; color: #666; font-weight: normal; }
-.header-one h1 { font-family: 'akzidenz-light-cn'; font-weight: normal; text-transform: uppercase; color: #666; font-size: 45px; position: absolute; left: 0; right: 0; top: 80px; margin: 0 auto; padding: 0 12px; }
+.header-one h1 { cursor: default; font-family: 'akzidenz-light-cn'; font-weight: normal; text-transform: uppercase; color: #666; font-size: 45px; position: absolute; left: 0; right: 0; top: 80px; margin: 0 auto; padding: 0 12px; }
 .header-one a { text-transform: uppercase; color: #666; font-size: 20px; position: absolute; left: 0; right: 0; bottom: 64px; margin: 0 auto; text-decoration: none; }
 .header-one a:hover { color: #bcd22f; }
 .header-one .fallback { position: absolute; left: 0; right: 0; top: 128px; margin: 0 auto; display: none; }
@@ -120,3 +119,4 @@ body { background-color: #eeedef; font-family: 'akzidenz-cn'; }
 .fade-effect { -webkit-transition: all 0.25s ease-in-out; -moz-transition: all 0.25s ease-in-out; -o-transition: all 0.25s ease-in-out; transition: all 0.25s ease-in-out; }
 .fadeIn {	opacity:0; -webkit-animation:fadeIn ease-in 1;	-moz-animation:fadeIn ease-in 1; -o-animation:fadeIn ease-in 1; animation:fadeIn ease-in 1;	-webkit-animation-fill-mode:forwards;	-moz-animation-fill-mode:forwards;-o-animation-fill-mode:forwards; animation-fill-mode:forwards; -webkit-animation-duration:0.25s; -moz-animation-duration:0.25s;	-o-animation-duration:0.25s;	animation-duration:0.25s; }
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } } @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } } @-o-keyframes fadeIn { from { opacity:0; } to { opacity:1; } } @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+.noselect { cursor: default; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}

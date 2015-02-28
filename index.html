@@ -48,7 +48,9 @@
 					<a href="work.html" class="fade-effect">view our clients</a>
 				</div>
 			</div>
-			<h2 class="loader">loading creativity...</h2>
+			<img class="prev" src="img/left-arrow.png" onclick="$('.owl-carousel-one').trigger('owl.prev');"></img>
+			<img class="next" src="img/right-arrow.png" onclick="$('.owl-carousel-one').trigger('owl.next');"></img>
+			<h2 class="loader noselect">loading creativity...</h2>
 		</div>
 		
 		<div class="section-one">
@@ -159,7 +161,7 @@
 		<script>
 			$( document ).ready(function() {
 				$('.gallery').finalTilesGallery({ margin: 12, gridCellSize: 12, imageSizeFactor: 1, minTileWidth: 100});
-				$(".header-one .owl-carousel-one").owlCarousel({navigation:true, navigationText:["",""], slideSpeed : 300, pagination: true, paginationSpeed : 400, autoPlay: false, singleItem : true, mouseDrag:false, afterMove : animate	});
+				$(".header-one .owl-carousel-one").owlCarousel({ slideSpeed : 300, pagination: true, paginationSpeed : 400, autoPlay: false, singleItem : true, afterMove : animate	});
 				$(".section-two .owl-carousel-one").owlCarousel({items:5,itemsDesktop : [5000,1],itemsDesktopSmall: [640,1],itemsTablet: [480,1],itemsMobile : false,navigation : true,slideSpeed : 300,	rewindNav : false,paginationSpeed : 400,navigationText: ["",""],pagination: false,autoPlay: false	});
 				$(window).trigger("resize"); //trigger resize event
 			});
@@ -167,7 +169,7 @@
 			//play video after the page has been loaded
 			$(window).load(function() {
 				$(".header-one .owl-carousel-one .item").fadeTo(1000,1);
-				$(".header-one .loader").fadeTo(1000,0);
+				$(".header-one .loader").fadeOut(500, function() {$(this).remove(); });
 				animate();
 			});
 			
