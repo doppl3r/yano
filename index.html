@@ -31,7 +31,7 @@
 			</div>
 		</div>
 		
-		<div class="header-one">
+		<div class="header-one noselect">
 			<div class="owl-carousel-one">
 				<div class="item">
 					<video><source src="video/vid1.mp4" type="video/mp4" /></video>
@@ -50,7 +50,7 @@
 			</div>
 			<img class="prev" src="img/left-arrow.png" onclick="$('.owl-carousel-one').trigger('owl.prev');"></img>
 			<img class="next" src="img/right-arrow.png" onclick="$('.owl-carousel-one').trigger('owl.next');"></img>
-			<h2 class="loader noselect">loading creativity...</h2>
+			<h2 class="loader">loading creativity...</h2>
 		</div>
 		
 		<div class="section-one">
@@ -161,7 +161,7 @@
 		<script>
 			$( document ).ready(function() {
 				$('.gallery').finalTilesGallery({ margin: 12, gridCellSize: 12, imageSizeFactor: 1, minTileWidth: 100});
-				$(".header-one .owl-carousel-one").owlCarousel({ slideSpeed : 300, pagination: true, paginationSpeed : 400, autoPlay: false, singleItem : true, afterMove : animate	});
+				$(".header-one .owl-carousel-one").owlCarousel({ slideSpeed : 300, pagination: true, paginationSpeed : 400, autoPlay: false, singleItem : true, /*mouseDrag:false, touchDrag:false,*/ afterMove : animate	});
 				$(".section-two .owl-carousel-one").owlCarousel({items:5,itemsDesktop : [5000,1],itemsDesktopSmall: [640,1],itemsTablet: [480,1],itemsMobile : false,navigation : true,slideSpeed : 300,	rewindNav : false,paginationSpeed : 400,navigationText: ["",""],pagination: false,autoPlay: false	});
 				$(window).trigger("resize"); //trigger resize event
 			});
@@ -172,12 +172,13 @@
 				$(".header-one .loader").fadeOut(500, function() {$(this).remove(); });
 				animate();
 			});
+			$( window ).resize(function() { displayGraphic(null,500); });
 			
 			//animate intro videos
 			function animate(){
 				var i = ($(".header-one .owl-carousel-one").data('owlCarousel').currentItem+1);
 				$( ".header-one .owl-carousel-one" ).each(function( index ) {	$( this ).find( ".item:eq("+(i-1)+") .logo" ).fadeOut(0);});
-				if (!isMobile()) $('#vid'+i).get(0).play(); //play if not mobile
+				if (!isMobile() && $(window).width() > 640) $('#vid'+i).get(0).play(); //play if not mobile
 				else { displayGraphic($('#vid'+i),0); }
 			}
 			
