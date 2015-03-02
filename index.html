@@ -48,9 +48,11 @@
 					<a href="work.html" class="fade-effect">view our clients</a>
 				</div>
 			</div>
-			<img class="prev" src="img/left-arrow.png" onclick="$('.owl-carousel-one').trigger('owl.prev');"></img>
-			<img class="next" src="img/right-arrow.png" onclick="$('.owl-carousel-one').trigger('owl.next');"></img>
-			<h2 class="loader">loading creativity...</h2>
+			<div class="wrapper">
+				<img class="prev" src="img/left-arrow.png" onclick="$('.owl-carousel-one').trigger('owl.prev');"></img>
+				<img class="next" src="img/right-arrow.png" onclick="$('.owl-carousel-one').trigger('owl.next');"></img>
+				<h2 class="loader">loading creativity...</h2>
+			</div>
 		</div>
 		
 		<div class="section-one">
@@ -191,6 +193,13 @@
 				var i = ($(".header-one .owl-carousel-one").data('owlCarousel').currentItem+1);
 				$(".header-one .owl-carousel-one").each(function(index){ $(this).find(".item:eq("+(i-1)+") .logo").fadeIn(speed);});
 			}
+			
+			//resize nav when scrolling downwards
+			$(window).scroll(function(){
+				if ($('body').scrollTop() > 0) { $('.nav').addClass('small'); } 
+				else { $('.nav').removeClass('small'); }
+			});
+			
 			function isMobile(){ return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? true:false; }
 		</script>
 	</body>
