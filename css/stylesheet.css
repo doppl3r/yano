@@ -24,10 +24,11 @@ body { background-color: #eeedef; font-family: 'akzidenz-cn'; }
 .header-one .wrapper { position: absolute; top: 0; left: 0; right: 0; }
 .header-one .prev { width: 36px; height: 120px; position: absolute;  left: 12px; top: 280px; cursor: pointer; }
 .header-one .next { width: 36px; height: 120px; position: absolute; right: 12px; top: 280px; cursor: pointer; }
-.header-one .owl-carousel-one .item { position: relative;  height: 640px; opacity: 0; }
-.header-one .owl-carousel-one .owl-pagination { position: absolute; top: 600px; left: 0; right: 0px; margin: 0 auto; }
-.header-one .owl-carousel-one .owl-pagination .owl-page { display: inline-block; width: 16px; height: 16px; background-color: #dedede; margin: 4px; border-radius: 50%; }
-.header-one .owl-carousel-one .owl-pagination .owl-page.active { background-color: #b3b3b3; }
+.header-one .owl-carousel-outer .item { position: relative;  height: 640px; opacity: 0; }
+.header-one .owl-carousel-outer .owl-pagination { position: absolute; top: 600px; left: 0; right: 0px; margin: 0 auto; }
+.header-one .owl-carousel-outer .owl-pagination .owl-page { display: inline-block; width: 16px; height: 16px; background-color: #dedede; margin: 4px; border-radius: 50%; }
+.header-one .owl-carousel-outer .owl-pagination .owl-page.active { background-color: #b3b3b3; }
+.header-one .owl-carousel-inner { position: absolute; top: 0; width: 100%; }
 .header-one .loader { position: absolute; left: 0; right: 0; margin: 0 auto; top: 320px; color: #666; font-weight: normal; }
 .header-one h1 { cursor: default; font-family: 'akzidenz-light-cn'; font-weight: normal; text-transform: uppercase; color: #666; font-size: 45px; position: absolute; left: 0; right: 0; top: 80px; margin: 0 auto; padding: 0 12px; }
 .header-one a { text-transform: uppercase; color: #666; font-size: 20px; position: absolute; left: 0; right: 0; bottom: 64px; margin: 0 auto; text-decoration: none; }
