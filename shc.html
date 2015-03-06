@@ -84,7 +84,7 @@
 				</div>
 			</div>
 
-			<div class="section-four" style="background-image:url('img/01-section-four-background.jpg');">
+			<div class="section-four shrink" style="background-image:url('img/01-section-four-background.jpg');">
 				<div class="wrapper">
 					<img class="fuller" src="img/01-section-four-art1.png"
 							 data-center-center="bottom:0%;" data-top-bottom="bottom:-100%;"/>
@@ -98,7 +98,7 @@
 				</div>
 			</div>
 
-			<div class="section-four" style="background-color: #fff; height: 480px" >
+			<div class="section-four" style="background-color: #fff; min-height: 480px;"  >
 				<div class="wrapper">
 					<img class="one-fourth" style="top: 5%; left: -5%;" src="img/01-section-four-art1.jpg" data-center-top="top:5%; left: -5%;" data-center-bottom="top:23%; left:75%"/>
 					<img class="one-fourth" style="top: 10%; right: 25%;" src="img/01-section-four-art3.jpg" data-center-top="top:10%; right: 25%;" data-center-bottom="top:23%; right: 45%"/>
@@ -130,13 +130,11 @@
 			<script type="text/javascript" src="js/jquery.finalTilesGallery.js"></script>
 			<script>
 				$(document).ready(function() {
-					//resize window
 					if (!isMobile()) $(window).resize(function(){$('.header-two').css("height",$(window).height());});
 					else { $('.header-two').css("height",$(window).height()); }
-					//init parallax
-					var s = skrollr.init( { /*edgeStrategy: 'reset'*/ } );
+					var s = skrollr.init( {  } ); //init parallax
 					skrollr.menu.init(s, {animate: true,easing: 'swing', scale: 2,duration: function(currentTop, targetTop) {return 1000;}});
-					$(window).trigger("resize"); //trigger resize event
+					$(window).trigger("resize"); //resize window
 					$(window).load(function() {	if (isMobile()) s.destroy(); else s.refresh(); });
 				});
 
