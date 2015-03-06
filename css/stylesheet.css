@@ -75,13 +75,16 @@ body { background-color: #eeedef; font-family: 'akzidenz-cn'; }
 .section-three h3 { font-family: 'akzidenz-light-cn'; font-size: 50px; color: #696969; font-weight: normal; }
 .section-three p { font-family: 'akzidenz-light'; font-size: 23px; color: #696969; line-height: 32px; }
 .section-three img.full { display: block; width: 100%; padding-bottom: 12px; }
+.section-three .pad-top-64 { padding-top: 64px; }
 .section-three .center { text-align: center; }
 .section-three .left { display: inline-block; width: 48%; margin-right: -4px; padding-right: 2%; }
 .section-three .right { display: inline-block; width: 48%; padding-left: 2%; vertical-align: top; }
+.section-three .left-block { display: block; }
 .section-three .center-block { display: block; text-align: center;}
 .section-three .center-block .iconz { margin: 24px 16px; }
 .section-three .flip-container { min-width: 12%; min-height: 100px; display: inline-block; margin-right: -4px; }
 .section-three .flip-container.one-third { width: 33.3333%; }
+.section-three .flip-container.one-forth { width: 25%; }
 .section-three .flip-container {  -webkit-perspective: 300; -moz-perspective: 300; -o-perspective: 300;  perspective: 300; }
 .section-three .flip-container:hover .flipper,.flip-container.hover .flipper { -webkit-transform: rotateY(180deg); -moz-transform: rotateY(180deg); -o-transform: rotateY(180deg); transform: rotateY(180deg);	}
 .section-three .flipper {-webkit-transition: 0.6s;-webkit-transform-style: preserve-3d;-moz-transition: 0.6s;-moz-transform-style: preserve-3d; -o-transition: 0.6s;-o-transform-style: preserve-3d;transition: 0.6s;transform-style: preserve-3d;position: relative;}
