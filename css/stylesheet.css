@@ -36,11 +36,15 @@ body { background-color: #eeedef; font-family: 'akzidenz-cn'; }
 .header-one .fallback { position: absolute; left: 0; right: 0; top: 128px; margin: 0 auto; display: none; }
 .header-one .center-image { position: absolute; left: 0; right: 0; top: 128px; margin: 0 auto; max-width: 100%; }
 
-.header-two { background: url('') no-repeat center center; background-size: cover; height: 640px; overflow: hidden; }
+.header-two { background: url('') no-repeat top center; background-size: cover; height: 640px; overflow: hidden; }
 .header-two .wrapper { position: relative; height: inherit; }
 .header-two .headline { position: absolute; top: 15%; padding: 0px 5%; text-shadow: 0px 2px 3px rgba(0,0,0,0.25); }
+.header-two .center { display: block; text-align: center; width: 100%; }
+.header-two .center img { max-width: 100%; }
+.header-two .middle { position: absolute; top: 40%; }
 .header-two h3 { font-family: 'akzidenz-light-cn'; font-size: 50px; color: #fff; font-weight: normal; margin: 0;}
 .header-two h5 { font-family: 'akzidenz-light'; font-size: 23px; color: #fff; font-weight: normal; margin: 0;}
+.header-two span { position: absolute; font-family: arial; color: transparent; white-space: nowrap; }
 
 .section-one { background-color:#FFF; padding: 48px 12px 0px 12px; overflow:hidden; text-align: center; }
 .section-one p { font-size: 20px; font-family: 'akzidenz-light-cn'; color: #666; margin: 0; line-height: 22px; }
