@@ -33,12 +33,13 @@
 			</div>
 		</div>
 		<div id="skrollr-body">
-			<div class="header-two" style="background-image: url('img/13-header.jpg'); background-position: center center; background-attachment: fixed;"></div>
+			<div class="header-two" id="bg1" style="background-image: url('img/13-header.jpg'); background-position: center center; background-attachment: fixed;"></div>
 
 			<div class="section-three" style="background-color: #ece9db;">
 				<div class="wrapper">
 					<div class="center-block">
-						<img class="iconz" src="img/print-icon.png"/><img class="iconz" src="img/branding-icon.png"/>
+						<a class="iconz"><span class="fadeIn">Print</span><img src="img/print-icon.png"/></a>
+						<a class="iconz"><span class="fadeIn">Branding</span><img src="img/branding-icon.png"/></a>
 					</div>
 					<div class="left">
 						<h3>The Challenge</h3>
@@ -90,20 +91,20 @@
 			<div class="section-four shrink" style="background-color: #6c665b;">
 				<div class="wrapper">
 					<img class="abs" src="img/13-cards1.png" style="bottom: -5%; left:-10%; width: 60%;"/>
-					<img class="abs" src="img/13-cards2.png" style="bottom: 20%; left:0%; width: 60%;"
+					<img class="abs" src="img/13-cards2.png" style="bottom: 40%; left:0%; width: 60%;"
 							 data-bottom-top="bottom:20%;" data-top-bottom="bottom:70%;"/>
 					<img class="abs" src="img/13-cards3.png" style="bottom: 20%; left:25%; width: 60%;"/>
-					<img class="abs" src="img/13-cards4.png" style="bottom: 0%; left:55%; width: 60%;"
+					<img class="abs" src="img/13-cards4.png" style="bottom: 30%; left:55%; width: 60%;"
 							 data-bottom-top="bottom:0%;" data-top-bottom="bottom:30%;"/>
 					<img class="abs" src="img/13-cards3.png" style="bottom: -5%; left:48%; width: 60%;"/>
 				</div>
 			</div>
 			
-			<div class="header-two" style="background-image: url('img/13-header2.jpg'); background-position: center center; background-attachment: fixed;"></div>
-			<div class="header-two" style="background-image: url('img/13-header3.jpg'); background-position: center center; background-attachment: fixed;"></div>
-			<div class="header-two" style="background-image: url('img/13-header4.jpg'); background-position: center center; background-attachment: fixed;"></div>
+			<div class="header-two" id="bg2" style="background-image: url('img/13-header2.jpg'); background-position: center center; background-attachment: fixed;"></div>
+			<div class="header-two" id="bg3" style="background-image: url('img/13-header3.jpg'); background-position: center center; background-attachment: fixed;"></div>
+			<div class="header-two" id="bg4" style="background-image: url('img/13-header4.jpg'); background-position: center center; background-attachment: fixed;"></div>
 			
-			<div class="section-three" style="background-color: #fff;">
+			<div class="section-three" style="background-color: #ece9db;">
 				<div class="wrapper">
 					<h3>Additional Work</h3>
 					<img class="full" src="img/13-boxes.jpg"/>
@@ -122,6 +123,7 @@
 			<script type="text/javascript" src="js/skrollr.min.js"></script>
 			<script type="text/javascript" src="js/skrollr.menu.min.js"></script>
 			<script type="text/javascript" src="js/jquery.finalTilesGallery.js"></script>
+			<script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
 			<script>
 				$(document).ready(function() {
 					if (!isMobile()) $(window).resize(function(){$('.header-two').css("height",$(window).height());}); //resize top of the page to match the browser
@@ -133,7 +135,13 @@
 					$(window).load(function() {	if (isMobile()) s.destroy(); else s.refresh(); });
 				});
 
-
+				//background fixes for iphone
+				if (isMobile()){
+					$("#bg1").backstretch("img/13-header.jpg");
+					$("#bg2").backstretch("img/13-header2.jpg");
+					$("#bg3").backstretch("img/13-header3.jpg");
+					$("#bg4").backstretch("img/13-header4.jpg");
+				}
 				//resize nav when scrolling downwards
 				$(window).scroll(function(){ if ($('body').scrollTop() > 0) { $('.nav').addClass('small'); } else { $('.nav').removeClass('small'); }});
 				function isMobile(){ return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? true:false; }
