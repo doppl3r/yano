@@ -46,6 +46,7 @@ body { background-color: #eeedef; font-family: 'akzidenz-cn'; }
 .header-two h3 { font-family: 'akzidenz-light-cn'; font-size: 50px; color: #fff; font-weight: normal; margin: 0;}
 .header-two h5 { font-family: 'akzidenz-light'; font-size: 23px; color: #fff; font-weight: normal; margin: 0;}
 .header-two span { position: absolute; font-family: arial; color: transparent; white-space: nowrap; }
+.header-two .corner-shot { width: 100%; }
 
 .section-one { background-color:#FFF; padding: 48px 12px 64px 12px; overflow:hidden; text-align: center; }
 .section-one p { font-size: 20px; font-family: 'akzidenz-light-cn'; color: #666; margin: 0; line-height: 22px; }
@@ -70,7 +71,7 @@ body { background-color: #eeedef; font-family: 'akzidenz-cn'; }
 .section-two .owl-carousel.owl-theme .owl-controls .owl-buttons .owl-next { border-radius: 0px; background: url('../img/slider-right2.png'); padding: 0px; right: 0px; width: 20px; height: 72px; position: absolute; bottom: 50%; }
 .section-two .owl-carousel.owl-theme .owl-controls .owl-buttons .owl-prev { border-radius: 0px; background: url('../img/slider-left2.png'); padding: 0px; left: 0px; width: 20px; height: 72px; position: absolute; bottom: 50%; }
 
-.section-three { background-color: #fff; overflow-x: hidden; position: relative; }
+.section-three { background-color: #fff; overflow-x: hidden; position: relative; overflow: hidden; }
 .section-three .wrapper { padding: 36px 12px 80px; }
 .section-three .wrapper.small { max-width: 640px; text-align: center; }
 .section-three h3 { font-family: 'akzidenz-light-cn'; font-size: 50px; color: #696969; font-weight: normal; }
@@ -164,7 +165,7 @@ body { background-color: #eeedef; font-family: 'akzidenz-cn'; }
 	.section-three .left { display: block; width: 100%; padding: 0px; }
 	.section-three .right { display: block; width: 100%; padding: 0px; }
 	.section-three .top { width: 100%; }
-	.section-three .bottom { width: 100%; margin-top:-8px; }
+	.section-three .bottom { width: 100%; margin-top:-4px; }
 	.section-four.shrink.large { height: 640px; }
 }
 @media(max-width:480px){
@@ -184,6 +185,7 @@ body { background-color: #eeedef; font-family: 'akzidenz-cn'; }
 	.header-one .center-image { top: 27%; }
 	.header-two .headline { top: 25%; }
     .header-two h3 { font-size: 42px;  }
+    .header-two .corner-shot { width: 140%; left: -20%; }
 	.section-four.shrink { height: 360px; }
 	.section-four.shrink.large { height: auto; }
 	.section-four img.full { bottom: 20%; }
@@ -236,3 +238,4 @@ body { background-color: #eeedef; font-family: 'akzidenz-cn'; }
 .fadeIn {	opacity:0; -webkit-animation:fadeIn ease-in 1;	-moz-animation:fadeIn ease-in 1; -o-animation:fadeIn ease-in 1; animation:fadeIn ease-in 1;	-webkit-animation-fill-mode:forwards;	-moz-animation-fill-mode:forwards;-o-animation-fill-mode:forwards; animation-fill-mode:forwards; -webkit-animation-duration:0.25s; -moz-animation-duration:0.25s;	-o-animation-duration:0.25s;	animation-duration:0.25s; }
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } } @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } } @-o-keyframes fadeIn { from { opacity:0; } to { opacity:1; } } @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 .noselect { cursor: default; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
+.center-blue-gradient { background: #0dafdd; background: -moz-radial-gradient(center, ellipse cover,  #0dafdd 0%, #0381c5 100%); background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#0dafdd), color-stop(100%,#0381c5)); background: -webkit-radial-gradient(center, ellipse cover,  #0dafdd 0%,#0381c5 100%); background: -o-radial-gradient(center, ellipse cover,  #0dafdd 0%,#0381c5 100%); background: -ms-radial-gradient(center, ellipse cover,  #0dafdd 0%,#0381c5 100%); background: radial-gradient(ellipse at center,  #0dafdd 0%,#0381c5 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0dafdd', endColorstr='#0381c5',GradientType=1 ); }
