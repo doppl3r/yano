@@ -195,6 +195,7 @@ body { background-color: #eeedef; font-family: 'akzidenz-cn'; }
 	.header-two .headline { top: 25%; }
     .header-two h3 { font-size: 42px;  }
     .header-two .corner-shot { width: 140%; left: -20%; }
+    .section-three h3 { margin: 24px 0px; }
 	.section-four.shrink { height: 360px; }
 	.section-four.shrink.large { height: auto; }
     
@@ -202,7 +203,8 @@ body { background-color: #eeedef; font-family: 'akzidenz-cn'; }
 	.section-four img.stack { display: block; width: 100%; position: static; }
 	.section-four img.eighty-five { width: 90%; padding: 0px 5% 12px; }
 	.section-four img.thirty { width: 90%; padding: 0px 5% 12px; }
-
+    .section-four.shrink .fake-window { height: 200px; }
+    .section-four h3 { margin: 24px 0;}
 	
 	
 	.footer .left .large-logo { height: 64px; }
