@@ -128,7 +128,7 @@ body { background-color: #eeedef; font-family: 'akzidenz-cn'; }
 
 .section-four { position: relative; overflow: hidden; background: url('') no-repeat center center; background-size: cover; }
 .section-four.shrink.large { height: 960px; }
-.section-four.shrink .fake-window { height: 360px; overflow-y: scroll; box-shadow: 0px 5px 15px rgba(0,0,0,.25); }
+.section-four.shrink .fake-window { height: 380px; overflow-y: scroll; box-shadow: 0px 5px 15px rgba(0,0,0,.25); }
 .section-four.shrink { height: 720px; }
 .section-four .wrapper { position: relative; height: inherit; min-height: inherit; margin: 0px auto; text-align: center; }
 .section-four .wrapper.padding { padding: 0px 12px 96px; }
