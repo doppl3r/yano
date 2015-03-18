@@ -33,7 +33,7 @@
 			</div>
 		</div>
 		<div id="skrollr-body">
-            <div class="header-two" id="bg1" style="background-image: url('img/16-header.jpg'); background-position: center center; background-attachment: fixed;">
+            <div class="header-two" id="bg1" style="background-image: url('img/18-header.jpg'); background-position: center center; background-attachment: fixed;">
                 <div class="wrapper" style="max-width: initial;" data-center-center="background-color: rgba(255,255,255,0);" data-top-bottom="background-color: rgba(255,255,255,1);"></div>
             </div>
 
@@ -150,14 +150,14 @@
                 
                 //background fixes for iphone
 				if (isMobile()){
-					$("#bg1").backstretch("img/16-header2.jpg");
-					$("#bg2").backstretch("img/16-booth.jpg");
+					$("#bg1").backstretch("img/18-header2.jpg");
+					$("#bg2").backstretch("img/18-booth.jpg");
 				}
                 
                 //swap out header image for mobile views
                 enquire.register("screen and (max-width:640px)", { setup : function() { },
-                    match : function() { $('#bg1').css('background-image','url(img/16-header2.jpg)'); },
-                    unmatch : function() { $('#bg1').css('background-image','url(img/16-header.jpg)'); }
+                    match : function() { $('#bg1').css('background-image','url(img/18-header2.jpg)'); },
+                    unmatch : function() { $('#bg1').css('background-image','url(img/18-header.jpg)'); }
                 }, true);
 
 				//resize nav when scrolling downwards

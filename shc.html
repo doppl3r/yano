@@ -33,10 +33,10 @@
 			</div>
 		</div>
 		<div id="skrollr-body">
-			<div class="header-two" style="background-image: url('img/01-header-background.jpg');">
+			<div id="bg1" class="header-two" style="background-image: url('img/01-header-background.jpg');">
 				<div class="wrapper">
-					<img src="img/01-header-art1.png" style="position: absolute; width: 60%; bottom: 0;" data-center-center="bottom:-10%;" data-top-bottom="bottom:25%;"/>
-					<img src="img/01-header-art2.png" style="position: absolute; width: 70%; left: 35%; bottom: 0;"	data-center-center="bottom:-10%;" data-top-bottom="bottom:45%;"/>
+					<img id="art1" src="img/01-header-art1.png" style="position: absolute; width: 60%; bottom: 0;" data-center-center="bottom:-10%;" data-top-bottom="bottom:25%;"/>
+					<img id="art2" src="img/01-header-art2.png" style="position: absolute; width: 70%; left: 35%; bottom: 0;"	data-center-center="bottom:-10%;" data-top-bottom="bottom:45%;"/>
 					<div class="headline">
 						<h3>Scottsdale Healthcare</h3>
 						<h5>Health Seminar Campaign Graphics</h5>
@@ -47,10 +47,10 @@
 			<div class="section-three" style="background-color: #ebebeb;">
 				<div class="wrapper">
 					<div class="center-block">
-						<a class="iconz"><span class="fadeIn">Print</span><img src="img/print-icon.png"/></a>
-						<a class="iconz"><span class="fadeIn">Mobile</span><img src="img/mobile-icon.png"/></a>
-						<a class="iconz"><span class="fadeIn">Marketing</span><img src="img/marketing-icon.png"/></a>
-						<a class="iconz"><span class="fadeIn">Illustrations</span><img src="img/illustrations-icon.png"/></a>
+						<a class="iconz"><span class="fadeIn">Print</span><img src="img/icons/print-icon.png"/></a>
+						<a class="iconz"><span class="fadeIn">Mobile</span><img src="img/icons/mobile-icon.png"/></a>
+						<a class="iconz"><span class="fadeIn">Marketing</span><img src="img/icons/marketing-icon.png"/></a>
+						<a class="iconz"><span class="fadeIn">Illustrations</span><img src="img/icons/illustrations-icon.png"/></a>
 					</div>
 					<div class="left">
 						<h3>The Challenge</h3>
@@ -131,6 +131,7 @@
 			<script type="text/javascript" src="js/skrollr.min.js"></script>
 			<script type="text/javascript" src="js/skrollr.menu.min.js"></script>
 			<script type="text/javascript" src="js/jquery.finalTilesGallery.js"></script>
+            <script type="text/javascript" src="js/enquire.min.js"></script>
 			<script>
 				$(document).ready(function() {
 					if (!isMobile()) $(window).resize(function(){$('.header-two').css("height",$(window).height());});
@@ -140,6 +141,25 @@
 					$(window).trigger("resize"); //resize window
 					$(window).load(function() {	if (isMobile()) s.destroy(); else s.refresh(); });
 				});
+                
+                //background fixes for iphone
+				if (isMobile()){
+					$("#bg1").backstretch("img/01-header-background2.jpg");
+				}
+                
+                //swap out header image for mobile views
+                enquire.register("screen and (max-width:640px)", { setup : function() { },
+                    match : function() { 
+                        $('#bg1').css('background-image','url(img/01-header-background2.jpg)'); 
+                        $('#art1').css('visibility','hidden');
+                        $('#art2').css('visibility','hidden');
+                    },
+                    unmatch : function() { 
+                        $('#bg1').css('background-image','url(img/01-header-background.jpg)'); 
+                        $('#art1').css('visibility','visible');
+                        $('#art2').css('visibility','visible');
+                    }
+                }, true);
 
 
 				//resize nav when scrolling downwards
