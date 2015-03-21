@@ -71,8 +71,8 @@
             <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 			<script>
 				$(document).ready(function() {
-					if (!isMobile()) $(window).resize(function(){$('.header-two').css("height",$(window).height());}); //resize top of the page to match the browser
-					else { $('.header-two').css("height",$(window).height()); }
+					if (!isMobile()) $(window).resize(function(){$('.header-two').css("height",$(window).height()/2);}); //resize top of the page to match the browser
+					else { $('.header-two').css("height",$(window).height()/2); }
                     var s = skrollr.init( {  } ); //init parallax
 					skrollr.menu.init(s, {animate: true,easing: 'swing', scale: 2,duration: function(currentTop, targetTop) {return 1000;}});
 					$(".section-five .owl-carousel").owlCarousel({items:5,itemsDesktop : [5000,10],itemsDesktopSmall: [960,6],itemsTablet: [480,3],itemsMobile : false,navigationText: ["",""],slideSpeed : 300, paginationSpeed : 400,pagination: true,autoPlay: 3000	});

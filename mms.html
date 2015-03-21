@@ -32,6 +32,13 @@
 				</div>
 			</div>
 		</div>
+        
+        <div class="side-nav fade-effect">
+            <a href="index.html"><img src="img/icons/nav-button1.png"/></a>
+            <a href="jack.html"><img src="img/icons/nav-button3.png"/></a>
+            <a href="bluesquare.html"><img src="img/icons/nav-button2.png"/></a>
+        </div>
+        
 		<div id="skrollr-body">
             <div class="header-two" id="bg1" style="background-image: url('img/19-header.jpg'); background-position: center center; background-attachment: fixed;">
                 <div class="wrapper" style="max-width: initial;" data-center-center="background-color: rgba(255,255,255,0);" data-top-bottom="background-color: rgba(255,255,255,1);"></div>
@@ -137,7 +144,18 @@
                 
 
 				//resize nav when scrolling downwards
-				$(window).scroll(function(){ if ($('body').scrollTop() > 0) { $('.nav').addClass('small'); } else { $('.nav').removeClass('small'); }});
+                var timer = null;
+                var delay = 500;
+                timer = setTimeout( function(){ $('.side-nav').css("right","-48px"); },delay*5);
+				$(window).scroll(function(){ 
+                    if ($('body').scrollTop() > 0) { 
+                        $('.nav').addClass('small'); 
+                        //$('.side-nav').css("right","0px");
+                        //if (timer) { clearTimeout(timer); timer = null; } timer = setTimeout( function(){ $('.side-nav').css("right","-48px"); },delay);
+                    } 
+                    else { $('.nav').removeClass('small'); }
+                });
+                $('.side-nav').hover(function() { if (timer) { clearTimeout(timer); timer = null; } $('.side-nav').css("right","0px"); },function() { if (timer) { clearTimeout(timer); timer = null; } timer = setTimeout( function(){ $('.side-nav').css("right","-48px"); },delay); });
 				function isMobile(){ return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? true:false; }
 			</script>
 		</div> <!--end of skrollr body-->
