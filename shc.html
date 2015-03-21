@@ -138,6 +138,7 @@
 			<script type="text/javascript" src="js/skrollr.min.js"></script>
 			<script type="text/javascript" src="js/skrollr.menu.min.js"></script>
 			<script type="text/javascript" src="js/jquery.finalTilesGallery.js"></script>
+            <script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
             <script type="text/javascript" src="js/enquire.min.js"></script>
 			<script>
 				$(document).ready(function() {
@@ -148,7 +149,6 @@
 					$(window).trigger("resize"); //resize window
 					$(window).load(function() {	if (isMobile()) s.destroy(); else s.refresh(); });
 				});
-                
                 //background fixes for iphone
 				if (isMobile()){
 					$("#bg1").backstretch("img/01-header-background2.jpg");
@@ -167,22 +167,24 @@
                         $('#art2').css('visibility','visible');
                     }
                 }, true);
-
-
 				//resize nav when scrolling downwards
                 var timer = null;
-                var delay = 500;
-                timer = setTimeout( function(){ $('.side-nav').css("right","-48px"); },delay*5);
+                var delay = isMobile() ? 500 : 500;
+                var amount = isMobile() ? "-64px" : "-48px";
+                timer = setTimeout( function(){ $('.side-nav').css("right",amount); },delay*5);
 				$(window).scroll(function(){ 
                     if ($('body').scrollTop() > 0) { 
                         $('.nav').addClass('small'); 
-                        //$('.side-nav').css("right","0px");
-                        //if (timer) { clearTimeout(timer); timer = null; } timer = setTimeout( function(){ $('.side-nav').css("right","-48px"); },delay);
+                        if (isMobile()){
+                            $('.side-nav').css("right","0px");
+                            if (timer) { clearTimeout(timer); timer = null; } timer = setTimeout( function(){ $('.side-nav').css("right",amount); },delay);
+                        }
                     } 
                     else { $('.nav').removeClass('small'); }
                 });
-                $('.side-nav').hover(function() { if (timer) { clearTimeout(timer); timer = null; } $('.side-nav').css("right","0px"); },function() { if (timer) { clearTimeout(timer); timer = null; } timer = setTimeout( function(){ $('.side-nav').css("right","-48px"); },delay); });
-				function isMobile(){ return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? true:false; }
+                $('.side-nav').hover(function() { if (timer) { clearTimeout(timer); timer = null; } $('.side-nav').css("right","0px"); },function() { if (timer) { clearTimeout(timer); timer = null; } timer = setTimeout( function(){ $('.side-nav').css("right",amount); },delay); });
+				//check if mobile
+                function isMobile(){ return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? true:false; }
 			</script>
 		</div> <!--end of skrollr body-->
 	</body>
