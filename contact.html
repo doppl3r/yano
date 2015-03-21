@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Yano Creative</title>
+		<meta name="description" content="yano creative">
+		<meta name="author" content="jacob debenedetto">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/magnific-popup.css">
+		<link rel="stylesheet" href="css/owl.carousel.css">
+		<link rel="stylesheet" href="css/final-tiles-gallery.css">
+		<link rel="stylesheet" href="css/stylesheet.css">
+		<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico' />
+	</head>
+	<body>
+		<div class="nav fade-effect" ontouchstart="this.classList.toggle('hover');">
+			<div class="wrapper">
+				<div class="left">
+					<a href="index.html">
+						<img class="large-logo fade-effect" src="img/logo-large.png"/>
+						<img class="small-logo fade-effect" src="img/logo-small.png"/>
+					</a>
+				</div>
+				<div class="right">
+					<img class="button fade-effect" src="img/nav-button.png"/>
+					<div class="nav-items fade-effect">
+						<!--<a class="fade-effect" href="work.html">work</a>-->
+						<!--<a class="fade-effect" href="results.html">results</a>-->
+						<a class="fade-effect" href="about.html">about</a>
+						<a class="fade-effect" href="contact.html">contact</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="skrollr-body">
+			<div class="header-two" id="bg1" style="background-image: url('img/99-contact-header.jpg'); background-position: top center; background-attachment: fixed;"></div>
+            
+            <div class="section-four" style="background-color: #fff;">
+                <div class="wrapper center small pad-top">
+                    <h3 class="uppercase">ok, let's talk</h3>
+                    <h5>214 E. Roosevelt St, Loft 2 Phoenix, Arizona 85004</h5>
+                    <h5>886 GET YANO<br/>866.438.9266</h5>
+                    <a href="mailto:info@yanocreative.com"><h5>info@yanocreative.com</h5></a>
+                    
+                    
+                </div>
+            </div>
+            <div class="section-four" style="background-color: #fff;">
+                <div class="wrapper" style="border-top: 1px solid #cccccc;">
+                   <!-- <iframe style="pointer-events:none; border:0;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3328.63277919471!2d-112.07048800000001!3d33.4588726!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b12163b933d9d%3A0x8a33e56251162f7b!2s214+E+Roosevelt+St%2C+Phoenix%2C+AZ+85004!5e0!3m2!1sen!2sus!4v1426896093192" width="100%" height="450" frameborder="0" style="border:0"></iframe>-->
+                    <h3 class="uppercase">see us on a map</h3>
+                    <div id="map" style="width:100%; height:420px;" />
+                </div>
+            </div>
+            
+			<div class="footer">
+				<div class="wrapper">
+					<div class="left"><a href="#"><img class="fade-effect large-logo" src="img/logo-large.png"/></a></div>
+					<div class="right"><a href="https://www.pinterest.com/yanocreative/"><img class="fade-effect" src="img/pinterest-logo.png"/></a><a href="https://twitter.com/yanocreative"><img class="fade-effect" src="img/twitter-logo.png"/></a><a href="https://www.facebook.com/yanocreative"><img class="fade-effect" src="img/facebook-logo.png"/></a></div>
+				</div>
+			</div>
+
+			<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+			<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+            <script type="text/javascript" src="js/magnific-popup.js"></script>
+			<script type="text/javascript" src="js/skrollr.min.js"></script>
+			<script type="text/javascript" src="js/skrollr.menu.min.js"></script>
+			<script type="text/javascript" src="js/jquery.finalTilesGallery.js"></script>
+			<script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
+            <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+			<script>
+				$(document).ready(function() {
+					if (!isMobile()) $(window).resize(function(){$('.header-two').css("height",$(window).height());}); //resize top of the page to match the browser
+					else { $('.header-two').css("height",$(window).height()); }
+                    var s = skrollr.init( {  } ); //init parallax
+					skrollr.menu.init(s, {animate: true,easing: 'swing', scale: 2,duration: function(currentTop, targetTop) {return 1000;}});
+					$(".section-five .owl-carousel").owlCarousel({items:5,itemsDesktop : [5000,10],itemsDesktopSmall: [960,6],itemsTablet: [480,3],itemsMobile : false,navigationText: ["",""],slideSpeed : 300, paginationSpeed : 400,pagination: true,autoPlay: 3000	});
+					$(".section-three .owl-carousel.zoom-gallery").owlCarousel({items:5,itemsDesktop : [5000,3],itemsDesktopSmall: [640,2],itemsTablet: [480,1],itemsMobile : false,navigation:false,slideSpeed : 300, paginationSpeed : 400,pagination: true,autoPlay: 3000	});
+                    $(".section-three .owl-carousel.awards").owlCarousel({items:1,itemsDesktop : [5000,1],itemsDesktopSmall: [640,1],itemsTablet: [480,1],itemsMobile : false,navigation:false,slideSpeed : 300, paginationSpeed : 400,pagination: true,autoPlay: 3000	});
+                    $(window).trigger("resize"); //resize window
+					$(window).load(function() {	if (isMobile()) s.destroy(); else s.refresh(); });
+				    
+                    var myLatlng = new google.maps.LatLng(33.4588726,-112.070488);
+                    var myOptions = {
+                        center: myLatlng,
+                        zoom: 12,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP,
+                        disableDefaultUI: true,
+                        scrollwheel: false,
+                        navigationControl: false,
+                        mapTypeControl: false,
+                        scaleControl: false,
+                        draggable: false
+                    };
+                    var marker = new google.maps.Marker({
+                          position: myLatlng,
+                          map: map,
+                          title: 'Hello World!'
+                    });
+                    var map = new google.maps.Map(document.getElementById("map"), myOptions);
+                    marker.setMap(map);
+                });
+                
+                //background fixes for iphone
+				if (isMobile()){
+					$("#bg1").backstretch("img/99-contact-header.jpg");
+				}
+                
+				//resize nav when scrolling downwards
+				$(window).scroll(function(){ if ($('body').scrollTop() > 0) { $('.nav').addClass('small'); } else { $('.nav').removeClass('small'); }});
+				function isMobile(){ return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? true:false; }
+			</script>
+		</div> <!--end of skrollr body-->
+	</body>
+</html>
