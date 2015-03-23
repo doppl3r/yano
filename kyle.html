@@ -54,12 +54,12 @@
 					</div>
 					<div class="left">
 						<h3>The Challenge</h3>
-						<p>Our client was looking to promote its group of well-known international hotel brands by “re-introducing” one specific brand each month. The challenge was to create a method of holding interest for a several-month campaign while explaining the benefits of each brand in a creative way.</p>
+						<p style="color: #e5e5e5;">coming soon!</p>
                     </div>
 					<div class="right">
 						<h3>The Solution</h3>
-                        <p>We created an online game which introduced features from a specific hotel and brand.  As the user interacted with the hotel map colorful pictures and benefits of the brand were discovered.  The user wins after succesfully guessing the correct hotel location of our hero, Jack Traveler.  Each month a different brand and prize was introduced.</p>
-                    </div>
+                        <p style="color: #e5e5e5;">coming soon!</p>
+				    </div>
 				</div>
 			</div>
 
@@ -152,19 +152,18 @@
 
 				//resize nav when scrolling downwards (mobile)
                 var timer = null;
-                var delay = isMobile() ? 4000 : 500;
+                var delay = 500;
                 var amount = isMobile() ? "-64px" : "-48px";
+                var lastScrollTop = 0;
                 timer = setTimeout( function(){ $('.side-nav').css("right",amount); },delay*5);
 				$(window).scroll(function(){ 
                     if ($('body').scrollTop() > 0) { 
                         $('.nav').addClass('small'); 
                         if (isMobile()){
-                            $('.side-nav').css("right",amount);
-                            clearTimeout($.data(this, 'scrollTimer'));
-                            $.data(this, 'scrollTimer', setTimeout(function() {
-                                $('.side-nav').css("right","0px");
-                                if (timer) { clearTimeout(timer); timer = null; } timer = setTimeout( function(){ $('.side-nav').css("right",amount); },delay);
-                            }, 250));
+                            var st = $(this).scrollTop();
+                            if (st > lastScrollTop){ $('.side-nav').css("right",amount); } 
+                            else { $('.side-nav').css("right","0px"); }
+                            lastScrollTop = st;
                         }
                     } 
                     else { $('.nav').removeClass('small'); }

@@ -55,12 +55,12 @@
 					</div>
 					<div class="left">
 						<h3>The Challenge</h3>
-						<p>As a new practice the Pain Center of Arizona was unknown to the medical community and needed to establish credibility and build a reputation for quality medical care with positive patient outcomes.</p>
-					</div>
+						<p style="color: #e5e5e5;">coming soon!</p>
+                    </div>
 					<div class="right">
 						<h3>The Solution</h3>
-						<p>We created and launched cohesive brand identity which blended strong medical imagery (x-rays) with clean white space and warm sepia-tone lifestyles combined with benefit - oriented outcomes.  Our successful launch helped The Pain Center grow into the largest pain practice in Arizona.</p>
-					</div>
+                        <p style="color: #e5e5e5;">coming soon!</p>
+				    </div>
 				</div>
 			</div>
 
@@ -93,7 +93,7 @@
 					<h3 style="color: #fff; text-align: left; padding-top:40px; margin-bottom: 36px;">Website & Mobile</h3>
 					<img class="fuller stack eighty-five" src="img/21-window-bar.png" style="top: 10%;"
 							 data-bottom-top="top:10%;" data-top-bottom="top:20%; left: -5%"/>
-					<img class="fuller stack thirty" src="img/21-window2.png" style="top: 1%; left: initial;"
+					<img class="fuller stack thirty" src="img/21-window2.png" style="top: 1%; left: auto; right: -5%;"
 							 data-bottom-top="top:10%;" data-top-bottom="top:50%; right: -5%;"/>
                     <div class="button-holder"><a href="http://bluesquaremfg.com/eclipse" target="_blank" class="button">View Live Site</a></div>
 				</div>
@@ -168,19 +168,18 @@
 
 				//resize nav when scrolling downwards (mobile)
                 var timer = null;
-                var delay = isMobile() ? 4000 : 500;
+                var delay = 500;
                 var amount = isMobile() ? "-64px" : "-48px";
+                var lastScrollTop = 0;
                 timer = setTimeout( function(){ $('.side-nav').css("right",amount); },delay*5);
 				$(window).scroll(function(){ 
                     if ($('body').scrollTop() > 0) { 
                         $('.nav').addClass('small'); 
                         if (isMobile()){
-                            $('.side-nav').css("right",amount);
-                            clearTimeout($.data(this, 'scrollTimer'));
-                            $.data(this, 'scrollTimer', setTimeout(function() {
-                                $('.side-nav').css("right","0px");
-                                if (timer) { clearTimeout(timer); timer = null; } timer = setTimeout( function(){ $('.side-nav').css("right",amount); },delay);
-                            }, 250));
+                            var st = $(this).scrollTop();
+                            if (st > lastScrollTop){ $('.side-nav').css("right",amount); } 
+                            else { $('.side-nav').css("right","0px"); }
+                            lastScrollTop = st;
                         }
                     } 
                     else { $('.nav').removeClass('small'); }

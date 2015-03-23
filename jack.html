@@ -143,21 +143,25 @@
 					$(window).load(function() {	if (isMobile()) s.destroy(); else s.refresh(); });
 				});
                 
-                //resize nav when scrolling downwards
+                //resize nav when scrolling downwards (mobile)
                 var timer = null;
-                var delay = isMobile() ? 500 : 500;
+                var delay = 500;
                 var amount = isMobile() ? "-64px" : "-48px";
+                var lastScrollTop = 0;
                 timer = setTimeout( function(){ $('.side-nav').css("right",amount); },delay*5);
 				$(window).scroll(function(){ 
                     if ($('body').scrollTop() > 0) { 
                         $('.nav').addClass('small'); 
                         if (isMobile()){
-                            $('.side-nav').css("right","0px");
-                            if (timer) { clearTimeout(timer); timer = null; } timer = setTimeout( function(){ $('.side-nav').css("right",amount); },delay);
+                            var st = $(this).scrollTop();
+                            if (st > lastScrollTop){ $('.side-nav').css("right",amount); } 
+                            else { $('.side-nav').css("right","0px"); }
+                            lastScrollTop = st;
                         }
                     } 
                     else { $('.nav').removeClass('small'); }
                 });
+                //desktop usability
                 $('.side-nav').hover(function() { if (timer) { clearTimeout(timer); timer = null; } $('.side-nav').css("right","0px"); },function() { if (timer) { clearTimeout(timer); timer = null; } timer = setTimeout( function(){ $('.side-nav').css("right",amount); },delay); });
 				//check if mobile
                 function isMobile(){ return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? true:false; }
