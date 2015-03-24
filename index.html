@@ -192,6 +192,7 @@
 				$(".header-one .owl-carousel-inner").owlCarousel({ slideSpeed : 300, pagination: false, autoPlay: true,  singleItem : true, mouseDrag:false, touchDrag:false,  });
 				$(".section-two .owl-carousel").owlCarousel({items:5,itemsDesktop : [5000,1],itemsDesktopSmall: [640,1],itemsTablet: [480,1],itemsMobile : false,navigation : true,slideSpeed : 300, paginationSpeed : 400,navigationText: ["",""],pagination: false,autoPlay: false	});
 				$(window).trigger("resize"); //trigger resize event
+                $(window).load(function() {	if (isMobile()) s.destroy(); else s.refresh(); });
 			});
 			
 			//play video after the page has been loaded
