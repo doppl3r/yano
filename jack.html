@@ -143,6 +143,8 @@
 					$(window).load(function() {	if (isMobile()) s.destroy(); else s.refresh(); });
 				});
                 
+                if (isMobile()){$("#bg1").backstretch("img/09-header.jpg");	}
+                
                 //resize nav when scrolling downwards (mobile)
                 var timer = null;
                 var delay = 500;

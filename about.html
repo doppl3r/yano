@@ -42,7 +42,7 @@
             
             <div class="section-five" style="background-color: #a9a9a9;">
                 <div class="wrapper">
-                    <div class="owl-carousel">
+                    <div class="owl-carousel less-padding">
 					    <div class="item"><img src="img/icons/strategy-labeled.png"/></div>
                         <div class="item"><img src="img/icons/marketing-labeled.png"/></div>
                         <div class="item"><img src="img/icons/branding-labeled.png"/></div>
@@ -147,7 +147,7 @@
 				$(document).ready(function() {
 					var s = skrollr.init( {  } ); //init parallax
 					skrollr.menu.init(s, {animate: true,easing: 'swing', scale: 2,duration: function(currentTop, targetTop) {return 1000;}});
-					$(".section-five .owl-carousel").owlCarousel({items:5,itemsDesktop : [5000,10],itemsDesktopSmall: [960,6],itemsTablet: [480,3],itemsMobile : false,navigationText: ["",""],slideSpeed : 300, paginationSpeed : 400,pagination: true,autoPlay: 3000	});
+					$(".section-five .owl-carousel").owlCarousel({items:5,itemsDesktop : [5000,8],itemsDesktopSmall: [960,6],itemsTablet: [480,3],itemsMobile : false,navigationText: ["",""],slideSpeed : 300, paginationSpeed : 400,pagination: true,autoPlay: 3000	});
 					$(".section-three .owl-carousel.zoom-gallery").owlCarousel({items:5,itemsDesktop : [5000,3],itemsDesktopSmall: [640,2],itemsTablet: [480,1],itemsMobile : false,navigation:false,slideSpeed : 300, paginationSpeed : 400,pagination: true,autoPlay: 3000	});
                     $(".section-three .owl-carousel.awards").owlCarousel({items:1,itemsDesktop : [5000,1],itemsDesktopSmall: [640,1],itemsTablet: [480,1],itemsMobile : false,navigation:false,slideSpeed : 300, paginationSpeed : 400,pagination: true,autoPlay: 3000	});
                     $(window).trigger("resize"); //resize window

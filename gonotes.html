@@ -40,13 +40,37 @@
         </div>
         
 		<div id="skrollr-body">
-            <div class="header-two" id="bg1" style="background-image: url('img/18-header.jpg'); background-position: center center; background-attachment: fixed;">
-                <div class="wrapper" style="max-width: 100%;" data-center-center="background-color: rgba(255,255,255,0);" data-top-bottom="background-color: rgba(255,255,255,1);"></div>
+            <div class="header-two" id="bg1" style="background-image: url('img/18-header.jpg'); background-position: top center; background-attachment: fixed;">
+                <div class="wrapper" style="max-width: 100%;" data-center-center="background-color: rgba(52,164,234,0);" data-top-bottom="background-color: rgba(52,164,234,1);">
+                    <div class="wrapper">
+                        <div class="headline right">
+                            <h3>GoNotes</h3>
+                            <h5>Branding and App Design</h5>
+                        </div>
+                    </div>
+                </div>
             </div>
 
 			<div class="section-three" style="background-color: #fff;">
 				<div class="wrapper">
-					<h3>coming soon!</h3>
+					<div class="center-block">
+						<a class="iconz"><span class="fadeIn">Print</span><img src="img/icons/print-icon.png"/></a>
+						<a class="iconz"><span class="fadeIn">Web</span><img src="img/icons/web-icon.png"/></a>
+						<a class="iconz"><span class="fadeIn">Video</span><img src="img/icons/video-icon.png"/></a>
+						<a class="iconz"><span class="fadeIn">Branding</span><img src="img/icons/branding-icon.png"/></a>
+						<a class="iconz"><span class="fadeIn">Marketing</span><img src="img/icons/marketing-icon.png"/></a>
+						<a class="iconz"><span class="fadeIn">Social</span><img src="img/icons/social-icon.png"/></a>
+						<a class="iconz"><span class="fadeIn">Email</span><img src="img/icons/email-icon.png"/></a>
+					</div>
+					<div class="left">
+						<h3>The Challenge</h3>
+						<p>The challenge was to create a new brand and app design targeting small business owners. The app was developed to offer users email marketing, calendar and contact tools to help run a small business more efficiently from a smart phone.</p>
+                    </div>
+					<div class="right">
+						<h3>The Solution</h3>
+                        <p>We developed a logo inspired by a common office paperclip. The form also resembled the letter’s “G” and “N” for GoNotes. We used illustrations to portray a wide variety of everyday small business owners while keeping the look feeling easy, bright, fresh and fun.</p>
+				    </div>
+                    <h3>More content coming soon!</h3>
 				</div>
 			</div>
 
@@ -63,7 +87,6 @@
 			<script type="text/javascript" src="js/skrollr.menu.min.js"></script>
 			<script type="text/javascript" src="js/jquery.finalTilesGallery.js"></script>
             <script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
-            <script type="text/javascript" src="js/enquire.min.js"></script>
 			<script>
 				$(document).ready(function() {
 					if (!isMobile()) $(window).resize(function(){$('.header-two').css("height",$(window).height());}); //resize top of the page to match the browser
@@ -76,16 +99,7 @@
 				});
                 
                 //background fixes for iphone
-				if (isMobile()){
-					$("#bg1").backstretch("img/18-header2.jpg");
-					$("#bg2").backstretch("img/18-booth.jpg");
-				}
-                
-                //swap out header image for mobile views
-                enquire.register("screen and (max-width:640px)", { setup : function() { },
-                    match : function() { $('#bg1').css('background-image','url(img/18-header2.jpg)'); },
-                    unmatch : function() { $('#bg1').css('background-image','url(img/18-header.jpg)'); }
-                }, true);
+				if (isMobile()){ $("#bg1").backstretch("img/18-header.jpg"); }
 
 				//resize nav when scrolling downwards (mobile)
                 var timer = null;
