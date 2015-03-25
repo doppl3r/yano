@@ -153,18 +153,16 @@
                 //resize nav when scrolling downwards (mobile)
                 var timer = null;
                 var delay = 500;
-                var amount = isMobile() ? "-64px" : "-48px";
+                var amount = isMobile() ? "-64px" : "-64px";
                 var lastScrollTop = 0;
-                timer = setTimeout( function(){ $('.side-nav').css("right",amount); },delay*5);
+                //timer = setTimeout( function(){ $('.side-nav').css("right",amount); },delay*5);
 				$(window).scroll(function(){ 
                     if ($('body').scrollTop() > 0) { 
                         $('.nav').addClass('small'); 
-                        if (isMobile()){
-                            var st = $(this).scrollTop();
-                            if (st > lastScrollTop){ $('.side-nav').css("right",amount); } 
-                            else { $('.side-nav').css("right","0px"); }
-                            lastScrollTop = st;
-                        }
+                        var st = $(this).scrollTop();
+                        if (st > lastScrollTop){ $('.side-nav').css("right",amount); } 
+                        else { $('.side-nav').css("right","0px"); }
+                        lastScrollTop = st;
                     } 
                     else { $('.nav').removeClass('small'); }
                 });

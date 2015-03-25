@@ -13,7 +13,7 @@ body { background-color: #eeedef; font-family: 'akzidenz-cn'; }
 .nav .large-logo { opacity: 1; position: absolute; left: 4px; top: 4px; }
 .nav .small-logo { opacity: 0; potision: absolute; left: 0; }
 
-.side-nav { width: 64px; top: 40%; right:0; z-index: 1; position: fixed; background-color: transparent;}
+.side-nav { padding-left: 16px; width: 64px; top: 40%; right:0; z-index: 1; position: fixed; background-color: transparent;}
 .side-nav:hover { right: 48px; }
 .side-nav a { width: 100%; }
 .side-nav a img { width: 100%; }
