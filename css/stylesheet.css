@@ -73,7 +73,7 @@ body { background-color: #eeedef; font-family: 'akzidenz-cn'; }
 .section-one .gallery .caption { background-color: rgba(25,25,25,0.5); color: #fff; }
 .section-one .gallery .caption p { color: #FFF; }
 
-.section-two { background-color: #f9f9f9;padding: 48px 12px; overflow:hidden; text-align: center; }
+.section-two { background-color: #f9f9f9;padding: 0 12px 48px 12px; overflow:hidden; text-align: center; }
 .section-two p { font-size: 20px; font-family: 'akzidenz-light-cn'; color: #666; margin: 0; line-height: 22px; }
 .section-two h1 { display: block; font-family: 'akzidenz-light-cn'; font-weight: normal; text-transform: uppercase; text-align: left; color: #666; font-size: 50px; margin: 0 auto; padding: 0 24px 42px; }
 .section-two .owl-carousel { text-align: center; }
@@ -82,6 +82,16 @@ body { background-color: #eeedef; font-family: 'akzidenz-cn'; }
 .section-two .owl-carousel.owl-theme .owl-controls .owl-buttons .owl-prev { border-radius: 0px; background: url('../img/slider-left2.png'); padding: 0px; left: 0px; width: 20px; height: 72px; position: absolute; bottom: 50%; }
 .section-two .wrapper.smaller { max-width: 480px; }
 .section-two .item.smaller { max-width: 420px; margin: 0 auto; }
+
+.section-two-new { background-color: #ffffff; padding: 48px 12px; overflow:hidden; text-align: center; }
+.section-two-new p { font-size: 20px; font-family: 'akzidenz-light-cn'; color: #666; margin: 0; line-height: 22px; }
+.section-two-new h1 { display: block; font-family: 'akzidenz-light-cn'; font-weight: normal; text-transform: uppercase; color: #666; font-size: 50px; margin: 0 auto; padding: 0 24px 42px; }
+.section-two-new .owl-carousel { text-align: center; }
+.section-two-new .owl-carousel img { margin: 0px 0px 36px; }
+.section-two-new .owl-carousel.owl-theme .owl-controls .owl-buttons .owl-next { border-radius: 0px; background: url('../img/slider-right2.png'); padding: 0px; right: 0px; width: 20px; height: 72px; position: absolute; bottom: 50%; }
+.section-two-new .owl-carousel.owl-theme .owl-controls .owl-buttons .owl-prev { border-radius: 0px; background: url('../img/slider-left2.png'); padding: 0px; left: 0px; width: 20px; height: 72px; position: absolute; bottom: 50%; }
+.section-two-new .wrapper.smaller { max-width: 480px; }
+.section-two-new .item.smaller { max-width: 420px; margin: 0 auto; }
 
 .section-three { background-color: #fff; overflow-x: hidden; position: relative; overflow: hidden; }
 .section-three .wrapper { padding: 36px 12px 80px; }

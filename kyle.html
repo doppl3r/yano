@@ -13,25 +13,7 @@
 		<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico' />
 	</head>
 	<body>
-		<div class="nav fade-effect" ontouchstart="this.classList.toggle('hover');">
-			<div class="wrapper">
-				<div class="left">
-					<a href="index.html">
-						<img class="large-logo fade-effect" src="img/logo-large.png"/>
-						<img class="small-logo fade-effect" src="img/logo-small.png"/>
-					</a>
-				</div>
-				<div class="right">
-					<img class="button fade-effect" src="img/nav-button.png"/>
-					<div class="nav-items fade-effect">
-						<!--<a class="fade-effect" href="work.html">work</a>-->
-						<!--<a class="fade-effect" href="results.html">results</a>-->
-						<a class="fade-effect" href="about.html">about</a>
-						<a class="fade-effect" href="contact.html">contact</a>
-					</div>
-				</div>
-			</div>
-		</div>
+		<div class="nav"></div>
         
         <div class="side-nav fade-effect">
             <a href="index.html"><img src="img/icons/nav-button1.png"/></a>
@@ -123,12 +105,7 @@
 				</div>
 			</div>
 
-			<div class="footer">
-				<div class="wrapper">
-					<div class="left"><a href="#"><img class="fade-effect large-logo" src="img/logo-large.png"/></a></div>
-					<div class="right"><a href="https://www.pinterest.com/yanocreative/"><img class="fade-effect" src="img/pinterest-logo.png"/></a><a href="https://twitter.com/yanocreative"><img class="fade-effect" src="img/twitter-logo.png"/></a><a href="https://www.facebook.com/yanocreative"><img class="fade-effect" src="img/facebook-logo.png"/></a></div>
-				</div>
-			</div>
+			<div class="footer"></div>
 
 			<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
 			<script type="text/javascript" src="js/owl.carousel.min.js"></script>
@@ -138,6 +115,9 @@
             <script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
 			<script>
 				$(document).ready(function() {
+                    $('.nav').load('nav.html');
+                    $('.footer').load('footer.html');
+
 					if (!isMobile()) $(window).resize(function(){$('.header-two').css("height",$(window).height());}); //resize top of the page to match the browser
 					else { $('.header-two').css("height",$(window).height()); }
 					var s = skrollr.init( {  } ); //init parallax

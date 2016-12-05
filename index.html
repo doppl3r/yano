@@ -13,25 +13,7 @@
 		<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico' />
 	</head>
 	<body>
-		<div class="nav fade-effect" ontouchstart="this.classList.toggle('hover');">
-			<div class="wrapper">
-				<div class="left">
-					<a href="index.html">
-						<img class="large-logo fade-effect" src="img/logo-large.png"/>
-						<img class="small-logo fade-effect" src="img/logo-small.png"/>
-					</a>
-				</div>
-				<div class="right">
-					<img class="button fade-effect" src="img/nav-button.png"/>
-					<div class="nav-items fade-effect">
-						<!--<a class="fade-effect" href="work.html">work</a>-->
-						<!--<a class="fade-effect" href="results.html">results</a>-->
-						<a class="fade-effect" href="about.html">about</a>
-						<a class="fade-effect" href="contact.html">contact</a>
-					</div>
-				</div>
-			</div>
-		</div>
+		<div class="nav"></div>
 		
 		<div class="header-one noselect">
 			<div class="owl-carousel-outer">
@@ -42,6 +24,7 @@
 					<div class="owl-carousel-inner graphic">
 						<div class="item"><img class="center-image" src="img/10-logo.png"/></div>
 						<div class="item"><img class="center-image" src="img/20-logo.png"/></div>
+						<div class="item"><img class="center-image" src="img/disney.png"/></div>
 					</div>
 					<a href="#work" class="fade-effect">view our work</a>
 				</div>
@@ -50,8 +33,7 @@
 					<img class="fallback" src="img/vid2.jpg"/>
 					<h1>CREATIVE THAT DRIVES RESULTS</h1>
 					<div class="owl-carousel-inner graphic">
-						<div class="item"><img class="center-image" src="img/10-logo.png"/></div>
-						<div class="item"><img class="center-image" src="img/20-logo.png"/></div>
+						<div class="item"><img class="center-image" src="img/5-billion.png"/></div>
 					</div>
 					<a href="#work" class="fade-effect">view our work</a>
 				</div>
@@ -63,10 +45,30 @@
                 <!--<h2 class="loader">loading creativity...</h2>-->
 			</div>
 		</div>
-		
-		<div class="section-one" id="work" data-menu-offset="-64">
+
+		<div class="section-two-new experience">
 			<div class="wrapper">
-				<h1>our work</h1>
+				<h1 style="padding-bottom:0;">experience</h1>
+				<p>Trusted by many of the world’s leading brands</p>
+				<div class="owl-carousel" id="experience">
+					<div class="item smaller"><img src="img/logos-1.png"/></div>
+					<div class="item smaller"><img src="img/logos-2.png"/></div>
+					<div class="item smaller"><img src="img/logos-3.png"/></div>
+					<div class="item smaller"><img src="img/logos-4.png"/></div>
+					<div class="item smaller"><img src="img/logos-5.png"/></div>
+					<div class="item smaller"><img src="img/logos-6.png"/></div>
+					<div class="item smaller"><img src="img/logos-7.png"/></div>
+					<div class="item smaller"><img src="img/logos-8.png"/></div>
+					<div class="item smaller"><img src="img/logos-9.png"/></div>
+					<div class="item smaller"><img src="img/logos-10.png"/></div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="section-one" id="work" style="background-color: #f9f9f9;" data-menu-offset="-64">
+			<div class="wrapper">
+				<h1 style="padding-bottom:0px;">our work</h1>
+				<p>International award-winning creative design, branding and marketing with over $5 billion in online sales</p>
 				<div class="gallery">
 					<div class="ftg-filters">
 						<a href="#" class="iconz">SHOW ALL<span class="fadeIn">:D</span></a>
@@ -171,12 +173,7 @@
 			</div>
 		</div>
 		
-		<div class="footer">
-			<div class="wrapper">
-				<div class="left"><a href="#"><img class="fade-effect large-logo" src="img/logo-large.png"/></a></div>
-				<div class="right"><a href="https://www.pinterest.com/yanocreative/"><img class="fade-effect" src="img/pinterest-logo.png"/></a><a href="https://twitter.com/yanocreative"><img class="fade-effect" src="img/twitter-logo.png"/></a><a href="https://www.facebook.com/yanocreative"><img class="fade-effect" src="img/facebook-logo.png"/></a></div>
-			</div>
-		</div>
+		<div class="footer"></div>
 	
 		<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
 		<script type="text/javascript" src="js/owl.carousel.min.js"></script>
@@ -185,12 +182,16 @@
 		<script type="text/javascript" src="js/jquery.finalTilesGallery.js"></script>
 		<script>
 			$( document ).ready(function() {
+			    $('.nav').load('nav.html');
+                $('.footer').load('footer.html');
+
 				var s = skrollr.init( {  } ); //init parallax
                 skrollr.menu.init(s, {animate: true,easing: 'swing', scale: 2,duration: function(currentTop, targetTop) {return 1000;}});
                 $('.gallery').finalTilesGallery({ margin: 12, gridCellSize: 12, imageSizeFactor: 1, minTileWidth: 100});
 				$(".header-one .owl-carousel-outer").owlCarousel({ slideSpeed : 500, pagination: true,  autoPlay: false, singleItem : true, mouseDrag:false, touchDrag:false, afterMove : animate	});
 				$(".header-one .owl-carousel-inner").owlCarousel({ slideSpeed : 300, pagination: false, autoPlay: true,  singleItem : true, mouseDrag:false, touchDrag:false,  });
 				$(".section-two .owl-carousel").owlCarousel({items:5,itemsDesktop : [5000,1],itemsDesktopSmall: [640,1],itemsTablet: [480,1],itemsMobile : false,navigation : true,slideSpeed : 300, paginationSpeed : 400,navigationText: ["",""],pagination: false,autoPlay: false	});
+				$(".section-two-new .owl-carousel").owlCarousel({items:5,itemsDesktop : [5000,4],itemsDesktopSmall: [640,3],itemsTablet: [480,1],itemsMobile : false,navigation : true,slideSpeed : 300, paginationSpeed : 400,navigationText: ["",""],pagination: false,autoPlay: false	});
 				$(window).trigger("resize"); //trigger resize event
                 $(window).load(function() {	if (isMobile()) s.destroy(); else s.refresh(); });
 			});
