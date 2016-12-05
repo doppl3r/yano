@@ -1,4 +1,4 @@
-html { background-color:#ffffff; }
+html { background-color:#ffffff; overflow: hidden; }
 body { margin:0; background-color: transparent; }
 canvas { display: block; width: 100%; height: auto; background-color: transparent; }
 div { font-family: 'akzidenz-light-cn'; text-align: center; color: #666666; }
@@ -30,7 +30,7 @@ input[type="text"] { border: 2px solid #cccccc !important; margin: 12px 0; }
 .noselect { -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
 .content { margin: 0 auto; display: flex; }
 .wrapper { width: 1260px; margin: auto auto; }
-.row { margin-right: 0; margin-left: 0; display: flex; align-items: center; }
+.row { margin-right: 0; margin-left: 0; display: flex; align-items: center; width: 100%; }
 .alertify .dialog nav, .alertify .alert nav { text-align: center !important; }
 
 @media(max-width:767px){ /*mobile view*/
@@ -40,7 +40,7 @@ input[type="text"] { border: 2px solid #cccccc !important; margin: 12px 0; }
     .pad-top { padding-top: 48px; margin-top: 48px; border-top: 1px solid #cccccc; }
 }
 @media(max-height: 639px) and (orientation: landscape){
-    .wrapper { max-width: 640px; }
+    /*.wrapper { max-width: 640px; }*/
 }
 @font-face {
     font-family: 'akzidenz-light-cn';

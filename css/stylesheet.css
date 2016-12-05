@@ -1,7 +1,7 @@
 
 html { background-color: #cccccc; }
 body { background-color: #eeedef; font-family: 'akzidenz-cn'; }
-
+iframe { border: none; display: block; width: 100%; }
 
 .nav { display: block; height: 80px; position: fixed; z-index: 1000; width: 100%; top:0; left:0; right:0; background-color: #FFF; overflow:hidden; }
 .nav .left { float: left; height: inherit; position: relative; }
@@ -196,6 +196,9 @@ body { background-color: #eeedef; font-family: 'akzidenz-cn'; }
 .section-five .cell.image.hide-desktop { display: block; width: 100%; }
 .section-five .cell.image.hide-mobile { display: none; }
 .section-five .cell.image img { display: block; width: 100%; }
+
+.section-game { background-color: #ffffff; }
+.section-game .wrapper { max-width: 1260px; padding: 96px 0; }
 
 .footer { background-color: #FFF; padding-bottom: 200px; }
 .footer .wrapper { padding: 0px 12px; }

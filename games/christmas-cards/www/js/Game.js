@@ -13,9 +13,7 @@
     //public functions
     Game.prototype.init = function() {
         // setup everything yo
-        window.addEventListener('resize', function(){ Game.prototype.resizeCanvas(); });
         this.canvas = document.getElementById("gameCanvas");
-        this.resizeCanvas();
         this.stage = new createjs.Stage(this.canvas);
         this.stage.enableMouseOver(60);
         createjs.Touch.enable(this.stage);
@@ -58,12 +56,6 @@
     Game.prototype.stageMouseUp = function(event){}
     Game.prototype.getWidth = function(){ return this.canvas.width; }
     Game.prototype.getHeight = function(){ return this.canvas.height; }
-    Game.prototype.resizeCanvas = function(){
-        var content = document.getElementById("content");
-        content.style.height = window.innerHeight+"px";
-        //content.style.width = (this.canvas.width/this.canvas.height)*parseInt(content.style.height)+"px";
-        //if (parseInt(content.style.width) > window.innerWidth) content.style.width = window.innerWidth + "px";
-    }
     Game.prototype.retry = function(){
         window.timer.stop();
         window.Game.hideRetryButton();
