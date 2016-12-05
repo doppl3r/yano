@@ -24,3 +24,5 @@ RewriteRule ^(.*)$ /websites/yano-2015/$1
 # followed by / then the main file for your site, index.php, index.html, etc. 
 RewriteCond %{HTTP_HOST} ^(www.)?yanocreative.com$ 
 RewriteRule ^(/)?$ /websites/yano-2015/index.html [L]
+
+Options +MultiViews

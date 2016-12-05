@@ -29,21 +29,25 @@
 		<script type="text/javascript" src="js/skrollr.min.js"></script>
 		<script type="text/javascript" src="js/skrollr.menu.min.js"></script>
 		<script type="text/javascript" src="js/jquery.finalTilesGallery.js"></script>
+		<script type="text/javascript" src="js/functions.js"></script>
 		<script>
 			$( document ).ready(function() {
 			    $('.nav').load('nav.html');
                 $('.footer').load('footer.html');
                 $(".christmas-cards").load(function(){
 					var obj = $('.christmas-cards');
-                    adjustSize(obj);
-                    $( window ).resize(function(){ adjustSize(obj); });
+                    adjustSize(obj); //resize when loaded
+                    if (!isMobile()) $( window ).resize(function(){ adjustSize(obj); });
 				});
 			});
 
             function adjustSize(obj){
+                var y = $(document).scrollTop(); //save before height adjustment
                 obj.css("height", "0px");
                 obj.css("height", obj.contents().height() + "px");
+                $(document).scrollTop(y); //restore scroll position
             }
+            function isMobile(){ return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? true:false; }
 		</script>
 	</body>
 </html>
