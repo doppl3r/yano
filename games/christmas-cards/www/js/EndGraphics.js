@@ -11,11 +11,13 @@
     container.tick = function (delta) {}
     container.fadeIn = function(){
         this.pickRandomGraphic();
-        createjs.Tween.get(this, {override:false}).wait(0).to({alpha: 1}, 2500, createjs.Ease.sineInOut)
+        this.fadingIn = true;
+        createjs.Tween.get(this, {override:true}).wait(0).to({alpha: 1}, 2500, createjs.Ease.sineInOut)
         .call(function(){ window.Game.checkHighScore(window.timer.stopTime); });
     }
     container.fadeOut = function(){
-        createjs.Tween.get(this, {override:false}).to({alpha: 0}, 250, createjs.Ease.sineInOut);
+        if (this.fadingIn == true){ this.alpha = 0; this.fadingIn = false; }
+        createjs.Tween.get(this, {override:true}).to({alpha: 0}, 250, createjs.Ease.sineInOut);
     }
     container.pickRandomGraphic = function(){
         this.removeAllChildren();
