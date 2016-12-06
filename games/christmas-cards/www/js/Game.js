@@ -58,7 +58,7 @@
     Game.prototype.getHeight = function(){ return this.canvas.height; }
     Game.prototype.retry = function(){
         window.timer.stop();
-        window.Game.hideRetryButton();
+        this.toggleRetryButton(false);
         this.setCurrentTime(0);
         this.endGraphics.fadeOut();
         this.cards.removeAllCards();
@@ -89,9 +89,9 @@
             ref.once('value').then(function(snapshot){
                 var score = snapshot.val().time;
                 if (newTime < score){
-                    alertify.defaultValue("your name")
+                    alertify.defaultValue("name")
                     .okBtn("Submit high score")
-                    .cancelBtn("Cancel high score")
+                    .cancelBtn("Cancel")
                     .prompt("" +
                         "<h3>New High Score!</h3>" +
                         "<h1>"+window.timer.toString(newTime)+"</h1>",
@@ -100,17 +100,15 @@
                             window.Game.setHighScore(val, newTime);
                             window.Game.setCurrentTime(0);
                             window.Game.updateHighScoreText();
-                            window.Game.showRetryButton(); //show retry button
 
                         }, function(ev){
                             ev.preventDefault();
                             window.Game.setCurrentTime(0);
                             window.Game.updateHighScoreText();
-                            window.Game.showRetryButton(); //show retry button
                         }
                     );
                 }
-                else window.Game.showRetryButton(); //show retry button
+                else window.Game.toggleRetryButton(true);
             });
         }
     }
@@ -126,13 +124,15 @@
             document.getElementById('highScoreName').innerHTML = snapshot.val().name;
         });
     }
-    Game.prototype.hideRetryButton = function(){
-        var button = document.getElementById("retry");
-        button.style.display = "none";
-    }
-    Game.prototype.showRetryButton = function(){
-        var button = document.getElementById("retry");
-        button.style.display = "table";
+    Game.prototype.toggleRetryButton = function(version){
+        if (version == true){
+            document.getElementById('retry').style.backgroundColor = "#879640";
+            document.getElementById('retry').style.color = "#ffffff";
+        }
+        else {
+            document.getElementById('retry').style.backgroundColor = "#f3f3f3";
+            document.getElementById('retry').style.color = "#666666";
+        }
     }
     //create prototype of self
     window.Game = new Game();

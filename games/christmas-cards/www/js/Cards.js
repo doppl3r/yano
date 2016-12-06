@@ -140,7 +140,7 @@
     container.pressMove = function(evt) {  }
     container.click = function(evt) {
         if (window.timer.play != true){
-            window.Game.hideRetryButton();
+            //window.Game.hideRetryButton();
             window.timer.start();
         }
         this.startTween();

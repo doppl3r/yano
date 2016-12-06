@@ -15,14 +15,25 @@
             <div class="row">
                 <div class="col-sm-6">
                     <canvas id="gameCanvas" width="600" height="600"></canvas>
-                    <p>Your Score</p>
-                    <h1 id="currentTime">00.00</h1>
                 </div>
                 <div class="col-sm-6 pad-top">
-                    <p>High Score</p>
-                    <h1 id="highScore">.</h1>
-                    <h3 id="highScoreName">.</h3>
-                    <div id="retry" class="retry noselect" onclick="window.Game.retry()">retry</div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <p>Your Score</p>
+                            <h1 id="currentTime">00.00</h1>
+                            <div id="retry" class="retry noselect" onclick="window.Game.retry()">retry</div>
+                        </div>
+                        <div class="col-xs-6">
+                            <p>High Score</p>
+                            <h1 id="highScore">00.00</h1>
+                            <h3 id="highScoreName">Name</h3>
+                        </div>
+                    </div>
+                    <div class="row top-border">
+                        <div class="col-xs-12">
+                            <img src="img/game-logo.png"/>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
