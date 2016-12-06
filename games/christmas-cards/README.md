@@ -1,6 +1,6 @@
-# Yano Matching Game
+# Christmas Cards
 
-Get the highest score for matching the cards
+Get the highest score for matching the Yano Creative themed Christmas cards
 
 #### Tools:
   - [CreateJS](http://createjs.com/) (Canvas)
