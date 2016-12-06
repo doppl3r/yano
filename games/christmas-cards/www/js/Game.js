@@ -100,11 +100,12 @@
                             window.Game.setHighScore(val, newTime);
                             window.Game.setCurrentTime(0);
                             window.Game.updateHighScoreText();
-
+                            window.Game.toggleRetryButton(true);
                         }, function(ev){
                             ev.preventDefault();
                             window.Game.setCurrentTime(0);
                             window.Game.updateHighScoreText();
+                            window.Game.toggleRetryButton(true);
                         }
                     );
                 }

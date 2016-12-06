@@ -13,7 +13,7 @@
         this.pickRandomGraphic();
         this.fadingIn = true;
         createjs.Tween.get(this, {override:true}).wait(0).to({alpha: 1}, 2500, createjs.Ease.sineInOut)
-        .call(function(){ window.Game.checkHighScore(window.timer.stopTime); });
+        .call(function(){ /*do something*/ });
     }
     container.fadeOut = function(){
         if (this.fadingIn == true){ this.alpha = 0; this.fadingIn = false; }

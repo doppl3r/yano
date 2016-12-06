@@ -95,6 +95,7 @@
         var length = this.children.length;
         for (var i=0; i < length; i++){ this.getChildAt(i).hideTween(i*100); }
         window.Game.endGraphics.fadeIn();
+        window.Game.checkHighScore(window.timer.stopTime);
         this.playerMatches = 0;
     }
 
