@@ -285,8 +285,9 @@ iframe { border: none; display: block; width: 100%; }
     .section-four .button-holder { position: static; margin-top: 20%; }
     .section-four.shrink .fake-window { height: 200px; }
     .section-four h3 { margin: 24px 0;}
-	
-	
+
+    .section-game .wrapper { padding: 64px 0; }
+
 	.footer .left .large-logo { height: 64px; }
 	.footer .right img { height: 12px; }
 }
