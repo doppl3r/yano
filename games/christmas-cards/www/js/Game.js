@@ -127,7 +127,7 @@
     }
     Game.prototype.toggleRetryButton = function(version){
         if (version == true){
-            document.getElementById('retry').style.backgroundColor = "#879640";
+            document.getElementById('retry').style.backgroundColor = "#d95555";
             document.getElementById('retry').style.color = "#ffffff";
         }
         else {

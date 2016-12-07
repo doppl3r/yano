@@ -4,7 +4,7 @@ canvas { display: block; width: 100%; height: auto; background-color: transparen
 div { font-family: 'akzidenz-light-cn'; text-align: center; color: #666666; }
 h1, h3, p { margin: 0; }
 h1 { font-size: 72px; line-height: 64px; margin: 12px 0 6px; }
-h3 { font-size: 48px; line-height: 36px; margin: 0 0 24px; }
+h3 { font-size: 48px; line-height: 36px; margin: 12px 0; }
 p, input[type="text"], button {
     outline-width: 0 !important;
     font-size: 36px !important;

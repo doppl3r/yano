@@ -13,6 +13,7 @@
     { "id": "card_image_8", "src": "img/card_image_8.png", "back":"true" },
     { "id": "card_image_9", "src": "img/card_image_9.png", "back":"true" },
     { "id": "end_graphic_1", "src": "img/end_graphic_1.jpg", "end":"true" },
-    { "id": "end_graphic_2", "src": "img/end_graphic_2.jpg", "end":"true" }
+    { "id": "end_graphic_2", "src": "img/end_graphic_2.jpg", "end":"true" },
+    { "id": "end_graphic_3", "src": "img/end_graphic_3.jpg", "end":"true" }
   ]
 }
