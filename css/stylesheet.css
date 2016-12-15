@@ -92,6 +92,7 @@ iframe { border: none; display: block; width: 100%; }
 .section-two-new .owl-carousel.owl-theme .owl-controls .owl-buttons .owl-prev { border-radius: 0px; background: url('../img/slider-left2.png'); padding: 0px; left: 0px; width: 20px; height: 72px; position: absolute; bottom: 50%; }
 .section-two-new .wrapper.smaller { max-width: 480px; }
 .section-two-new .item.smaller { max-width: 420px; margin: 0 auto; }
+.section-two-new #experience { padding-top: 32px; }
 
 .section-three { background-color: #fff; overflow-x: hidden; position: relative; overflow: hidden; }
 .section-three .wrapper { padding: 36px 12px 80px; }
