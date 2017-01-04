@@ -201,6 +201,20 @@ iframe { border: none; display: block; width: 100%; }
 .section-game { background-color: #ffffff; }
 .section-game .wrapper { max-width: 1260px; padding: 96px 0; }
 
+.section-testimonial { background-color: #ffffff; }
+.section-testimonial .row { margin: 0; }
+.section-testimonial .wrapper { padding: 64px 0; border-top: 1px solid #eeeeee; }
+.section-testimonial h1 { display: block; font-family: 'akzidenz-light-cn'; font-weight: normal; text-transform: uppercase; color: #666; font-size: 50px; margin: 0 auto; }
+.section-testimonial p { font-family: 'akzidenz-light-cn'; font-weight: normal; font-size: 20px; line-height: 24px; color: #696969; }
+.section-testimonial label { display: block; background-color: #f9f9f9; color: #999999; font-family: 'akzidenz-cn'; font-weight: normal; margin: 0; padding: 8px 16px 0; }
+.section-testimonial input[type="text"], 
+.section-testimonial input[type="email"], 
+.section-testimonial textarea 
+    { background-color: #f9f9f9; border: none; color: #918f8f; display: block; font-family: 'akzidenz-cn'; font-size: 34px; padding: 0 16px 8px; width: 100%; }
+.section-testimonial .clear { text-align: right; }
+.section-testimonial button { border: none; background-color: #f3f3f3; color: #666666; font-size: 32px; font-family: 'akzidenz-light-cn'; font-weight: normal; border-radius: 3px; box-shadow: 0 2px 2px rgba(0,0,0,0.15); padding: 0 16px; }
+.section-testimonial form [class*="col-"] { padding: 12px; }
+
 .footer { background-color: #FFF; padding-bottom: 200px; }
 .footer .wrapper { padding: 0px 12px; }
 .footer .left { display: inline-block; width: 50%; margin-right: -4px; }
@@ -208,6 +222,8 @@ iframe { border: none; display: block; width: 100%; }
 .footer .right { display: inline-block; width: 50%; vertical-align: top; }
 .footer .right img { float: right; margin: 16px 0px 16px 24px; opacity: 1; }
 .footer .right img:hover { opacity: .25; }
+
+textarea:hover, input:hover, textarea:active, input:active, textarea:focus, input:focus, button:focus, button:active, button:hover, label:focus, .btn:active, .btn.active { outline:0px !important; -webkit-appearance:none; }
 
 @media(max-width:1200px){ 
     .section-five p { font-size: 18px; }

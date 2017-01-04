@@ -3,7 +3,7 @@
     //constructor
     function Cards() {
         this.Container_constructor();
-        this.setupCards(4, 3, 12);
+        this.setupCards(4, 4, 12);
     }
 
     var container = createjs.extend(Cards, createjs.Container); //instance of class
@@ -25,8 +25,8 @@
         this.currentMatch = 0; //reset current matches
         this.playerMatches = 0; //reset matches possible
 
-        var cardWidth = 112;
-        var cardHeight = 176;
+        var cardWidth = 107;
+        var cardHeight = 108;
         var order = []; //list of totalMatches
         var options = []; //list of random card id numbers
 
@@ -117,6 +117,7 @@
         this.regY = this.height / 2;
         this.flipped = false;
         this.rotation = this.getRandomInt(-5,5);
+        this.maxCardStyles = 
         this.image_1 = new createjs.Bitmap(window.Game.assetManager.preload.getResult("card_"+this.getRandomInt(1,3)));
         this.image_2 = new createjs.Bitmap(window.Game.assetManager.preload.getResult("card_image_"+id));
         this.image = this.image_1;

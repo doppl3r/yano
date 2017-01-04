@@ -62,7 +62,7 @@
         this.setCurrentTime(0);
         this.endGraphics.fadeOut();
         this.cards.removeAllCards();
-        this.cards.setupCards(4, 3, 12);
+        this.cards.setupCards(4, 4, 12);
     }
     Game.prototype.initFirebase = function(){
         // Initialize Firebase
@@ -127,7 +127,7 @@
     }
     Game.prototype.toggleRetryButton = function(version){
         if (version == true){
-            document.getElementById('retry').style.backgroundColor = "#d95555";
+            document.getElementById('retry').style.backgroundColor = "#e67c49";
             document.getElementById('retry').style.color = "#ffffff";
         }
         else {

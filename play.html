@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/owl.carousel.css">
 		<link rel="stylesheet" href="css/final-tiles-gallery.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/stylesheet.css?v=1.0">
 		<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico' />
 	</head>
@@ -17,10 +18,11 @@
 
 		<div class="section-game">
 			<div class="wrapper">
-				<iframe class="christmas-cards" src="games/christmas-cards/www/index.html"></iframe>
+				<iframe class="business-cards" src="games/business-cards/www/index.html"></iframe>
 			</div>
 		</div>
 
+		<div class="section-testimonial"></div>
 
 		<div class="footer"></div>
 	
@@ -33,12 +35,13 @@
 		<script>
 			$( document ).ready(function() {
 			    $('.nav').load('nav.html');
-                $('.footer').load('footer.html');
-                $(".christmas-cards").load(function(){
-					var obj = $('.christmas-cards');
+                $(".business-cards").load(function(){
+					var obj = $('.business-cards');
                     adjustSize(obj); //resize when loaded
                     if (!isMobile()) $( window ).resize(function(){ adjustSize(obj); });
 				});
+				$('.section-testimonial').load('testimonial-form.html');
+				$('.footer').load('footer.html');
 			});
 
             function adjustSize(obj){

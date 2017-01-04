@@ -1,0 +1,35 @@
+<div class="wrapper">
+	<div class="row">
+		<div class="col-sm-6">
+			<h1>share with us</h1>
+			<p>If you’ve worked with Yano Creative we’d love it if you would share a testimonial about your (hopefully amazing) experience. Or if you have some suggestions we’d love to hear those too.  C’mon ... pleeeeeease ... we built you this free game and everything. Didn’t your mom ever teach you to share?</p>
+		</div>
+		<div class="col-sm-6">
+			<form enctype="multipart/form-data" action="php/mail.php" method="POST" >
+				<div class="row">
+					<div class="col-xs-12">
+						<label for="comment">Comment </label>
+						<textarea name="comment" id="comment" required></textarea>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6">
+						<label for="name">Full Name </label>
+						<input type="text" name="name" id="name" required>
+					</div>
+					<div class="col-xs-6">
+						<label for="company">Company </label>
+						<input type="text" name="company" id="company" required>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="clear">
+							<button class="button effect-swing" id="submitbutton" type="submit" value="Send File">Submit</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

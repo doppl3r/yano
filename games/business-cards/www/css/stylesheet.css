@@ -41,7 +41,7 @@ input[type="text"] { border: 2px solid #cccccc !important; margin: 12px 0; }
 .alertify .dialog nav, .alertify .alert nav { text-align: center !important; }
 .top-border { border-top: 1px solid #cccccc; padding-top: 32px; margin-top: 32px; }
 
-#currentTime { color: #d95555; }
+#currentTime { color: #e67c49; }
 
 @media(max-width:767px){ /*mobile view*/
     .wrapper { display: block; padding: 32px 0; height: auto !important; }
