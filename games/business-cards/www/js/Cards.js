@@ -141,10 +141,7 @@
     }
     container.pressMove = function(evt) {  }
     container.click = function(evt) {
-        if (window.timer.play != true){
-            //window.Game.hideRetryButton();
-            window.timer.start();
-        }
+        if (window.timer.play != true){ window.timer.start(); }
         this.startTween();
     }
     container.rollOver = function(evt) { this.cursor="pointer"; }
@@ -154,11 +151,11 @@
     }
     container.startTween = function(){
         if (this.flipped == false){
+            this.flipped = true;
             createjs.Tween.get(this, {override:false}).to({scaleX: 0, scaleY: 1.25}, 250, createjs.Ease.sineIn)
             .call(function(){ //swap out image
                 this.removeAllChildren();
                 this.addChild(this.image_2);
-                this.flipped = true;
             })
             .to({scaleX: 1, scaleY: 1}, 250, createjs.Ease.sineOut)
             .call(function(){
