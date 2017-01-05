@@ -17,8 +17,23 @@
 		<div class="nav"></div>
 
 		<div class="section-game">
+			<div class="fullscreen">
+				<div class="wrapper">
+					<iframe class="business-cards" src="games/business-cards/www/index.html"></iframe>
+				</div>
+				<a href="#about-the-game" class="arrow">
+					<span>about the game</span>
+					<img src="img/down-arrow.png">
+				</a>
+			</div>
+		</div>
+
+		<div class="about-the-game gray">
+			<div id="about-the-game" style="position:absolute; top: -80px;"></div>
 			<div class="wrapper">
-				<iframe class="business-cards" src="games/business-cards/www/index.html"></iframe>
+				<h1>ABOUT THE GAME</h1>
+				<p style="max-width: 768px; margin: 0 auto;">Business Cards is our twist on the classic card matching game.  We developed the game as an interactive form to explore some of our award-winning work.  Here's some background on each of the cards:</p>
+				<div class="about-the-game-carousel"></div>
 			</div>
 		</div>
 
@@ -40,9 +55,12 @@
                     adjustSize(obj); //resize when loaded
                     if (!isMobile()) $( window ).resize(function(){ adjustSize(obj); });
 				});
+
+				$('.about-the-game-carousel').load('about-the-game-carousel.html');
 				$('.section-testimonial').load('testimonial-form.html');
 				$('.footer').load('footer.html');
 			});
+			$( window ).load(function() { fullscreen(null); });
 
             function adjustSize(obj){
                 var y = $(document).scrollTop(); //save before height adjustment
@@ -50,6 +68,14 @@
                 obj.css("height", obj.contents().height() + "px");
                 $(document).scrollTop(y); //restore scroll position
             }
+
+			function fullscreen(name) {
+                $(name).addClass('fullscreen');
+                $('.fullscreen').css({ width: $(window).width(), height: $(window).height()  });
+            }
+            var $root = $('html, body'); //Smoothly Scroll to Anchors
+			$('a.arrow').click(function () { var href = $.attr(this, 'href'); $root.animate({ scrollTop: ($(href).offset().top) - ($('nav').height()) }, 1000, 'easeInOutQuad', function () {}); return false;});
+
             function isMobile(){ return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? true:false; }
 		</script>
 	</body>

@@ -199,11 +199,32 @@ iframe { border: none; display: block; width: 100%; }
 .section-five .cell.image img { display: block; width: 100%; }
 
 .section-game { background-color: #ffffff; }
-.section-game .wrapper { max-width: 1260px; padding: 96px 0; }
+.section-game .fullscreen { display: -webkit-inline-box; display: -webkit-inline-flex; display: -moz-inline-box; display: -ms-inline-flexbox; display: inline-flex; -webkit-align-self: auto; position: relative; width: 100%; }
+.section-game .wrapper { max-width: 1260px; padding: 96px 0; margin: auto auto; flex: 1; }
+.section-game .arrow { position: absolute; color: #929394;  font-size: 15px; text-align: center; left: 0; right: 0; bottom: 0; }
+.section-game .arrow span { display: block; text-transform: uppercase; }
+.section-game .arrow img { width: 32px; padding-bottom: 16px; opacity: 0.5; }
+.section-game a, .section-game a:hover, .section-game a:active, .section-game a:visited { text-decoration:none; }
+
+.about-the-game { text-align: center; padding: 64px 0; overflow: hidden; position: relative; }
+.about-the-game h1 { display: block; font-family: 'akzidenz-light-cn'; font-weight: normal; text-transform: uppercase; color: #666; font-size: 50px; margin: 0 auto; padding: 0 16px; }
+.about-the-game p { font-family: 'akzidenz-light-cn'; font-weight: normal; font-size: 20px; line-height: 20px; color: #696969; padding: 0 16px; }
+.about-the-game.gray { background-color: #f9f9f9; }
+.about-the-game-carousel { position: relative; }
+.about-the-game-carousel h2 { color: #494949; font-size: 32px; padding: 5% 0; margin: 0; }
+.about-the-game-carousel .item { padding: 7.5%; }
+.about-the-game-carousel .item a { background-color: #9ebc42; display: inline-block;  }
+.about-the-game-carousel .item img { margin-bottom: 28px; max-width: 100%; padding-bottom: initial; }
+.about-the-game-carousel .item p { margin: 0; color: #4a4a4a; }
+.about-the-game-carousel .navi { position: absolute; left:0;right:0;top:0;bottom:0; pointer-events: none; }
+.about-the-game-carousel .navi .arrow { width: auto; position: absolute; top:40%; margin-top: -36px; cursor: pointer; pointer-events:auto; }
+.about-the-game-carousel .navi img.arrow { padding-bottom: initial; }
+.about-the-game-carousel .navi .arrow.left { left: -32px; }
+.about-the-game-carousel .navi .arrow.right { right: -32px; }
 
 .section-testimonial { background-color: #ffffff; }
 .section-testimonial .row { margin: 0; }
-.section-testimonial .wrapper { padding: 64px 0; border-top: 1px solid #eeeeee; }
+.section-testimonial .wrapper { padding: 64px 0; }
 .section-testimonial h1 { display: block; font-family: 'akzidenz-light-cn'; font-weight: normal; text-transform: uppercase; color: #666; font-size: 50px; margin: 0 auto; padding: 0 16px; }
 .section-testimonial p { font-family: 'akzidenz-light-cn'; font-weight: normal; font-size: 20px; line-height: 24px; color: #696969; padding: 0 16px; }
 .section-testimonial label { display: block; background-color: #f9f9f9; color: #999999; font-family: 'akzidenz-cn'; font-weight: normal; margin: 0; padding: 8px 16px 0; }
@@ -230,6 +251,9 @@ textarea:hover, input:hover, textarea:active, input:active, textarea:focus, inpu
     .section-five p { font-size: 18px; }
     .section-five h3 { font-size: 36px; }
     .section-five .cell { padding: 0 5%; }
+
+    .about-the-game-carousel .navi .arrow.left { left: 32px; }
+    .about-the-game-carousel .navi .arrow.right { right: 32px; }
 }
 @media(max-width:960px){
 	/*these will override the '.small' nav class properties for small devices*/
@@ -246,10 +270,12 @@ textarea:hover, input:hover, textarea:active, input:active, textarea:focus, inpu
     .section-five h3 { font-size: 32px; }
     .section-five p { font-size: 18px; }
 }
-@media(max-width:800px){
+@media(max-width:767px){
     .nav .left { height: 48px; margin: 8px 0px; }
     .section-five h3 { font-size: 32px; }
     .section-five p { font-size: 16px; }
+
+    .section-game .arrow { display: none; }
 }
 @media(max-width:640px){
     .header-one video { display: none; }
@@ -274,6 +300,13 @@ textarea:hover, input:hover, textarea:active, input:active, textarea:focus, inpu
     .section-five .cell.image img { border-radius: 50%; margin-top: 24px; }
     .section-five.mobile-padding { padding: 10% 0px; background-color: #fff; }
 }
+@media(max-height: 639px) and (orientation: landscape){
+    .nav { position: initial; }
+    .section-game .fullscreen { display: block; }
+    .section-game .wrapper { padding-top: 0; }
+    .section-game .arrow { display: none; }
+}
+
 @media(max-width:480px){
 	.nav {  overflow:visible; }
 	.nav .right { }
