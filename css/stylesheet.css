@@ -204,8 +204,8 @@ iframe { border: none; display: block; width: 100%; }
 .section-testimonial { background-color: #ffffff; }
 .section-testimonial .row { margin: 0; }
 .section-testimonial .wrapper { padding: 64px 0; border-top: 1px solid #eeeeee; }
-.section-testimonial h1 { display: block; font-family: 'akzidenz-light-cn'; font-weight: normal; text-transform: uppercase; color: #666; font-size: 50px; margin: 0 auto; }
-.section-testimonial p { font-family: 'akzidenz-light-cn'; font-weight: normal; font-size: 20px; line-height: 24px; color: #696969; }
+.section-testimonial h1 { display: block; font-family: 'akzidenz-light-cn'; font-weight: normal; text-transform: uppercase; color: #666; font-size: 50px; margin: 0 auto; padding: 0 16px; }
+.section-testimonial p { font-family: 'akzidenz-light-cn'; font-weight: normal; font-size: 20px; line-height: 24px; color: #696969; padding: 0 16px; }
 .section-testimonial label { display: block; background-color: #f9f9f9; color: #999999; font-family: 'akzidenz-cn'; font-weight: normal; margin: 0; padding: 8px 16px 0; }
 .section-testimonial input[type="text"], 
 .section-testimonial input[type="email"], 
@@ -224,6 +224,7 @@ iframe { border: none; display: block; width: 100%; }
 .footer .right img:hover { opacity: .25; }
 
 textarea:hover, input:hover, textarea:active, input:active, textarea:focus, input:focus, button:focus, button:active, button:hover, label:focus, .btn:active, .btn.active { outline:0px !important; -webkit-appearance:none; }
+.soft-button { border: none; background-color: #f3f3f3; color: #666666; display: inline-block; font-size: 32px !important; font-family: 'akzidenz-light-cn'; font-weight: normal; border-radius: 3px; box-shadow: 0 2px 2px rgba(0,0,0,0.15); margin: 24px 12px; padding: 4px 16px; }
 
 @media(max-width:1200px){ 
     .section-five p { font-size: 18px; }
