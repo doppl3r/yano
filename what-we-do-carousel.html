@@ -1,0 +1,50 @@
+<div class="wrapper">
+    <div class="what-we-do-carousel-nav">
+        <div class="item"><img src="img/icons/print-icon.png" onclick='$(".what-we-do-carousel-content").trigger("owl.goTo", 1);'/></div>
+        <div class="item"><img src="img/icons/mobile-icon.png" onclick='$(".what-we-do-carousel-content").trigger("owl.goTo", 2);'/></div>
+        <div class="item"><img src="img/icons/web-icon.png" onclick='$(".what-we-do-carousel-content").trigger("owl.goTo", 3);'/></div>
+        <div class="item"><img src="img/icons/video-icon.png" onclick='$(".what-we-do-carousel-content").trigger("owl.goTo", 4);'/></div>
+        <div class="item"><img src="img/icons/branding-icon.png" onclick='$(".what-we-do-carousel-content").trigger("owl.goTo", 5);'/></div>
+        <div class="item"><img src="img/icons/announce-icon.png" onclick='$(".what-we-do-carousel-content").trigger("owl.goTo", 6);'/></div>
+        <div class="item"><img src="img/icons/marketing-icon.png" onclick='$(".what-we-do-carousel-content").trigger("owl.goTo", 7);'/></div>
+        <div class="item"><img src="img/icons/illustrations-icon.png" onclick='$(".what-we-do-carousel-content").trigger("owl.goTo", 8);'/></div>
+        <div class="item"><img src="img/icons/social-icon.png" onclick='$(".what-we-do-carousel-content").trigger("owl.goTo", 9);'/></div>
+        <div class="item"><img src="img/icons/email-icon.png" onclick='$(".what-we-do-carousel-content").trigger("owl.goTo", 10);'/></div>
+    </div>
+</div>
+<div class="wrapper">
+    <div class="what-we-do-carousel-content">
+        <div class="item">
+            <div class="left">
+                <h3>Print Work</h3>
+                <ul>
+                    <li>Brochures</li>
+                    <li>Fliers</li>
+                    <li>Direct Mailers</li>
+                    <li>Business Cards</li>
+                </ul>
+            </div>
+            <div class="right"><img src="img/wwd-1.png" /></div>
+        </div>
+        <div class="item">
+            <div class="left">
+                <h3>Print Work</h3>
+                <ul>
+                    <li>Brochures</li>
+                    <li>Fliers</li>
+                    <li>Direct Mailers</li>
+                    <li>Business Cards</li>
+                </ul>
+            </div>
+            <div class="right"><img src="img/wwd-1.png" /></div>
+        </div>
+    </div>
+    <div class="navi">
+        <img class="arrow left" src="img/slider-left2.png" onclick='$(".what-we-do-carousel-content").trigger("owl.prev");' />
+        <img class="arrow right" src="img/slider-right2.png" onclick='$(".what-we-do-carousel-content").trigger("owl.next");' />
+    </div>
+ </div>   
+<script>
+    $(".what-we-do-carousel-nav").owlCarousel({ items : 3, itemsDesktop: [5000,10], itemsDesktopSmall: [800,8], itemsTablet: [640,6], itemsMobile: [480,4] });
+    $(".what-we-do-carousel-content").owlCarousel({ items : 1, itemsDesktop: [5000,1], itemsDesktopSmall: [800,1], itemsTablet: [640,1] });
+</script>
