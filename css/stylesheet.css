@@ -1,6 +1,6 @@
 
 html { background-color: #cccccc; }
-body { background-color: #eeedef; font-family: 'akzidenz-cn'; }
+body { background-color: #ffffff; font-family: 'akzidenz-cn'; }
 iframe { border: none; display: block; width: 100%; }
 
 .nav { display: block; height: 80px; position: fixed; z-index: 1000; width: 100%; top:0; left:0; right:0; background-color: #FFF; overflow:hidden; }
@@ -83,7 +83,7 @@ iframe { border: none; display: block; width: 100%; }
 .section-two .wrapper.smaller { max-width: 480px; }
 .section-two .item.smaller { max-width: 420px; margin: 0 auto; }
 
-.section-two-new { background-color: #ffffff; padding: 48px 12px; overflow:hidden; text-align: center; }
+.section-two-new { background-color: #ffffff; padding: 0 12px 48px; overflow:hidden; text-align: center; }
 .section-two-new p { font-size: 20px; font-family: 'akzidenz-light-cn'; color: #666; margin: 0; line-height: 22px; }
 .section-two-new h1 { display: block; font-family: 'akzidenz-light-cn'; font-weight: normal; text-transform: uppercase; color: #666; font-size: 50px; margin: 0 auto; padding: 0 24px 42px; }
 .section-two-new .owl-carousel { text-align: center; }
@@ -246,7 +246,7 @@ iframe { border: none; display: block; width: 100%; }
 .section-testimonial button { border: none; background-color: #f3f3f3; color: #666666; font-size: 32px; font-family: 'akzidenz-light-cn'; font-weight: normal; border-radius: 3px; box-shadow: 0 2px 2px rgba(0,0,0,0.15); padding: 0 16px; }
 .section-testimonial form [class*="col-"] { padding: 12px; }
 
-.what-we-do { background-color: #ffffff; padding-top: 48px;  }
+.what-we-do { background-color: #ffffff; padding: 48px 0 0;  }
 .what-we-do h1 { display: block; font-family: 'akzidenz-light-cn'; font-weight: normal; text-transform: uppercase; color: #666; font-size: 50px; margin: 0 auto; padding: 0 24px 12px; text-align: center; }
 .what-we-do .wrapper { max-width: 840px; margin: 0 auto; position: relative; }
 .what-we-do .what-we-do-carousel-nav .item { text-align: center; }
@@ -256,10 +256,11 @@ iframe { border: none; display: block; width: 100%; }
 .what-we-do .what-we-do-carousel-content .item { border-bottom: 1px solid #eeeeee; }
 .what-we-do .what-we-do-carousel-content .left { display: inline-block; width: 25%; margin-right: -4px; vertical-align: middle; }
 .what-we-do .what-we-do-carousel-content .right { display: inline-block; width: 75%; margin-right: -20px; padding-left: 16px; vertical-align: middle; }
-.what-we-do .what-we-do-carousel-content h3 { display: block; font-family: 'akzidenz-light-cn'; font-weight: normal; text-transform: uppercase; color: #666; font-size: 50px; margin: 0 auto; padding: 12px 0 0; text-align: right; }
+.what-we-do .what-we-do-carousel-content h3 { display: block; font-family: 'akzidenz-light-cn'; font-weight: normal; text-transform: uppercase; color: #666; font-size: 50px; line-height: 48px; margin: 0 auto; padding: 12px 0 0; text-align: right; }
 .what-we-do .what-we-do-carousel-content ul { list-style: none; padding: 0; margin: 0; text-align: right; }
 .what-we-do .what-we-do-carousel-content ul li { font-size: 20px; font-family: 'akzidenz-light-cn'; color: #666; margin: 0; line-height: 28px; }
-.what-we-do .what-we-do-carousel-content img { display: block; max-width: 100%; }
+.what-we-do .what-we-do-carousel-content span { display: block; font-size: 13px; font-family: 'akzidenz-light-cn'; color: #666; margin: 20px 0 0; line-height: 18px; text-align: right; }
+.what-we-do .what-we-do-carousel-content img { display: block; max-width: 100%; box-sizing: border-box; }
 .what-we-do .navi { position: absolute; left:0;right:0;top:0;bottom:0; pointer-events: none; }
 .what-we-do .navi .arrow { width: auto; position: absolute; top:40%; margin-top: -36px; cursor: pointer; pointer-events:auto; }
 .what-we-do .navi img.arrow { padding-bottom: initial; }
@@ -299,7 +300,8 @@ textarea:hover, input:hover, textarea:active, input:active, textarea:focus, inpu
     .section-five .next { display: none; }
     .section-five h3 { font-size: 32px; }
     .section-five p { font-size: 18px; }
-    .what-we-do .navi { display: none; }
+    .what-we-do .navi .arrow.left { left: 0; }
+    .what-we-do .navi .arrow.right { right: 0; }
 }
 @media(max-width:767px){
     .nav .left { height: 48px; margin: 8px 0px; }
@@ -338,6 +340,10 @@ textarea:hover, input:hover, textarea:active, input:active, textarea:focus, inpu
     .what-we-do .what-we-do-carousel-content .right { display: block; width: 100%; padding: 0; }
     .what-we-do .what-we-do-carousel-content h3 { text-align: center; font-size: 32px; }
     .what-we-do .what-we-do-carousel-content ul { text-align: center; }
+    .what-we-do .what-we-do-carousel-content span { text-align: center; }
+    .what-we-do .what-we-do-carousel-content img { padding-left: 24px !important; padding-right: 24px !important; }
+    .what-we-do .navi .arrow.left { left: 12px; }
+    .what-we-do .navi .arrow.right { right: 12px; }
 }
 @media(max-height: 639px) and (orientation: landscape){
     .nav { position: initial; }
