@@ -267,6 +267,42 @@ iframe { border: none; display: block; width: 100%; }
 .what-we-do .navi .arrow.left { left: -50px; }
 .what-we-do .navi .arrow.right { right: -50px; }
 
+.section-animation {
+	position: relative;
+	text-align: center;
+
+	h1 {
+		color: #666;
+		display: block;
+		font-family: 'akzidenz-light-cn';
+		font-size: 50px;
+		font-weight: normal;
+		left: 0;
+		margin: 0 auto;
+		right: 0;
+		text-align: center;
+		text-transform: uppercase;
+		padding: 0 16px;
+		position: absolute;
+
+		&.white { color: #fff; }
+	}
+	p { 
+		color: #696969;
+		font-family: 'akzidenz-light-cn';
+		font-weight: normal;
+		font-size: 20px;
+		left: 0;
+		line-height: 20px;
+		padding: 0 16px; 
+		position: absolute;
+		right: 0;
+		text-align: center;
+
+		&.white { color: #fff; }
+	}
+}
+
 .footer { background-color: #FFF; padding-bottom: 200px; }
 .footer .wrapper { padding: 0px 12px; }
 .footer .left { display: inline-block; width: 50%; margin-right: -4px; }
