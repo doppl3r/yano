@@ -15,25 +15,25 @@
 		<div class="nav"></div>
 
 		<div class="section-animation" id="award" style="background-color: #f3f3f3; padding-top: 80px;">
-			<iframe src="animations/award.html" height="640px"></iframe>
+			<iframe id="iframe_award" src="animations/award.html" height="640px"></iframe>
 			<h1 style="top: 128px;">Award winning results</h1>
 			<p style="top: 640px;">International award-winning work spanning over 20 years</p>
 		</div>
 		
 		<div class="section-animation" id="eight" style="background-color: #4e93db; padding-bottom: 48px;">
-			<iframe src="animations/eight.html" height="640px"></iframe>
+			<iframe id="iframe_eight" src="animations/eight.html" height="640px"></iframe>
 			<h1 class="white" style="top: 550px;">$8 Billion in Online Sales</h1>
 			<p class="white" style="top: 600px;">Sold online for our clients</p>
 		</div>
 
 		<div class="section-animation" id="water" style="background-color: #bddb4e;">
-			<iframe src="animations/water.html" height="640px"></iframe>
+			<iframe id="iframe_water" src="animations/water.html" height="640px"></iframe>
 			<h1 class="white" style="top: 520px;">400% Sales Growth in One Year</h1>
 			<p class="white" style="top: 570px;">Growth for our pool industry clients</p>
 		</div>
 
 		<div class="section-animation" id="bed" style="background-color: #6452ad;">
-			<iframe src="animations/bed.html" height="640px"></iframe>
+			<iframe id="iframe_bed" src="animations/bed.html" height="640px"></iframe>
 			<h1 class="white" style="top: 520px;">$1 Billion in One Year</h1>
 			<p class="white" style="top: 570px;">Sold online for our travel clients</p>
 		</div>
@@ -50,11 +50,27 @@
 			    $('.nav').load('nav.html');
                 $('.footer').load('footer.html');
 
-				setInterval(function(){ $('#award').animate( { backgroundColor: '#f3f3f3' }, 125).animate( { backgroundColor: '#f5f5f5' }, 0);}, 250);
-				setInterval(function(){ $('#eight').animate( { backgroundColor: '#4e93db' }, 125).animate( { backgroundColor: '#5296de' }, 0);}, 250);
-				setInterval(function(){ $('#water').animate( { backgroundColor: '#bddb4e' }, 125).animate( { backgroundColor: '#c1e051' }, 0);}, 250);
-				setInterval(function(){ $('#bed').animate( { backgroundColor: '#6452ad' }, 75).animate( { backgroundColor: '#6754b3' }, 0);}, 1000);
+				//flicker backgrounds
+				setInterval(function(){ $('.section-animation#award').animate( { backgroundColor: '#f3f3f3' }, 125).animate( { backgroundColor: '#f5f5f5' }, 0);}, 250);
+				setInterval(function(){ $('.section-animation#eight').animate( { backgroundColor: '#4e93db' }, 125).animate( { backgroundColor: '#5296de' }, 0);}, 250);
+				setInterval(function(){ $('.section-animation#water').animate( { backgroundColor: '#bddb4e' }, 125).animate( { backgroundColor: '#c1e051' }, 0);}, 250);
+				setInterval(function(){ $('.section-animation#bed').animate( { backgroundColor: '#6452ad' }, 75).animate( { backgroundColor: '#6754b3' }, 0);}, 1000);
 			});
+
+			$(window).on("load",function() {
+				if (isMobile()){
+					//freeze frames for mobile devices
+					var iframe_award = document.getElementById("iframe_award").contentWindow;
+					var iframe_eight = document.getElementById("iframe_eight").contentWindow;
+					var iframe_water = document.getElementById("iframe_water").contentWindow;
+					var iframe_bed = document.getElementById("iframe_bed").contentWindow;
+					iframe_award.exportRoot.gotoAndStop(24);
+					iframe_eight.exportRoot.gotoAndStop(0);
+					iframe_water.exportRoot.gotoAndStop(21);
+					iframe_bed.exportRoot.gotoAndStop(0);
+				}
+			});
+			function isMobile(){ return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? true:false; }
 		</script>
 	</body>
 </html>
