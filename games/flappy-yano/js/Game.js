@@ -10,8 +10,7 @@
 			//initiate object variables
 			this.showFPS = false;
 			this.gamePaused = false;
-			this.addStage();
-			this.setStage();
+			this.initStage();
 			this.addGameListeners();
 		};
 		this.tick = function(event){
@@ -19,24 +18,23 @@
 			//this.player.tick(this.delta);
 			this.stage.update();
 		};
-		this.addStage = function(){
+		this.initStage = function(){
+			//init stage from canvas
 			this.canvas = document.getElementById("gameCanvas");
 			this.stage = new createjs.StageGL(this.canvas);
+			this.stage.setClearColor("#ffffff");
 			this.stage.enableMouseOver(60);
 			createjs.Touch.enable(this.stage);
 			this.resizeCanvas();
 
+			//init preload
 			this.assetManager = new AssetManager(this.canvas.width, this.canvas.height, this.em);
 			this.stage.addChild(this.assetManager);
 		};
 		this.setStage = function() {
-
-			//clean up stage
-			this.stage.clear();
-			this.stage.removeAllChildren();
-
-			//add objects to the stage to the stage
-			//this.stage.addChild(this.artboard);
+			//the stage should only be set after the assets have been preloaded
+			this.player = new Player();
+			this.stage.addChild(this.player);
 
 			//start game timer
 			if (!createjs.Ticker.hasEventListener("tick")) {
