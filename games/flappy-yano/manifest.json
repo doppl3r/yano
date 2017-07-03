@@ -1,0 +1,5 @@
+{
+  "manifest": [
+    { "id": "bird-1", "src": "sounds/bird-1.png" }
+  ]
+}
