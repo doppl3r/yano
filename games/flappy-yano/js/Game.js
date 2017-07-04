@@ -15,13 +15,13 @@
 		};
 		this.tick = function(event){
 			this.delta = event.delta; //elapsedTimeInMS / 1000msPerSecond
-			//this.player.tick(this.delta);
+			this.player.tick(this.delta);
 			this.stage.update();
 		};
 		this.initStage = function(){
 			//init stage from canvas
 			this.canvas = document.getElementById("gameCanvas");
-			this.stage = new createjs.StageGL(this.canvas);
+			this.stage = new createjs.StageGL(this.canvas, { antialias: true });
 			this.stage.setClearColor("#ffffff");
 			this.stage.enableMouseOver(60);
 			createjs.Touch.enable(this.stage);
@@ -42,7 +42,7 @@
 				createjs.Ticker.timingMode = createjs.Ticker.RAF;
 			}
 		};
-		this.stageMouseDown = function(event){ /*this.player.jump();*/ };
+		this.stageMouseDown = function(event){ this.player.jump(); };
 		this.stageMouseMove = function(event){};
 		this.stageMouseUp = function(event){};
 		this.scrollWheel = function(e){};
@@ -64,7 +64,7 @@
 				case 16: /**/ break; //shift
 				case 17: /**/ break; //ctrl
 				case 27: /**/ break; //esc
-				case 32: /*window.Game.player.jump();*/ break; //space
+				case 32: window.Game.player.jump(); break; //space
 				case 37: /**/ break; //left
 				case 39: /**/ break; //right
 				case 46: /**/ break; //delete
