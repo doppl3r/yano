@@ -18,10 +18,12 @@
             this.s_body = new createjs.Sprite(this.spriteSheet, "b1");
             this.s_leftWing = new createjs.Sprite(this.spriteSheet, "l1");
             this.s_leftWing.x = -60;
-            this.s_leftWing.y = -24;
+            this.s_leftWing.y = -48;
+            this.s_leftWing.rotation = 45;
             this.s_rightWing = new createjs.Sprite(this.spriteSheet, "r1");
             this.s_rightWing.x = 64;
-            this.s_rightWing.y = -24;
+            this.s_rightWing.y = -48;
+            this.s_rightWing.rotation = -45;
             this.addChild(this.s_rightWing, this.s_body, this.s_leftWing);
             this.scaleX = 0.5;
             this.scaleY = 0.5;
@@ -43,15 +45,17 @@
             //prevent play from falling off screen
             if (this.y > window.Game.getHeight()) this.respawn();
             //flap the wings
-            //TODO fix the FPS drop after a few seconds
-            createjs.Tween.get(this.s_leftWing, {loop:true}).to({ rotation: -135, y: 0 }, 100, createjs.Ease.sineInOut).to({ rotation: 45, y: -48 }, 100, createjs.Ease.sineInOut);
-            createjs.Tween.get(this.s_rightWing, {loop:true}).to({ rotation: 135, y: 0 }, 100, createjs.Ease.sineInOut).to({ rotation: -45,y: -48 }, 100, createjs.Ease.sineInOut);
+            if (this.animate != false){
+                this.animate = false;
+                createjs.Tween.get(this.s_leftWing).to({ rotation: -135, y: 0 }, 100).to({ rotation: 45, y: -48 }, 100).call(function(tween){ createjs.Tween.removeTweens(tween._target); tween._target.parent.animate = true; });
+                createjs.Tween.get(this.s_rightWing).to({ rotation: 135, y: 0 }, 100).to({ rotation: -45, y: -48 }, 100).call(function(tween){ createjs.Tween.removeTweens(tween._target); tween._target.parent.animate = true; });
+            }
         };
         this.jump = function(amplitude, duration) {
             this.pauseJump = false;
             this.gravity.push(0, this.y);
         };
-        this.respawn = function(resetNewSpawn) { 
+        this.respawn = function(resetNewSpawn) {
             this.pauseJump = null;
             this.x = 240;
             this.y = 360;
