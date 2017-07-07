@@ -270,6 +270,7 @@ iframe { border: none; display: block; width: 100%; }
 .section-animation {
 	position: relative;
 	text-align: center;
+    min-height: 720px;
 
 	h1 {
 		color: #666;

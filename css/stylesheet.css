@@ -1354,7 +1354,8 @@ iframe {
 
 .section-animation {
   position: relative;
-  text-align: center; }
+  text-align: center;
+  min-height: 720px; }
   .section-animation h1 {
     color: #666;
     display: block;
