@@ -1431,6 +1431,36 @@ textarea:hover, input:hover, textarea:active, input:active, textarea:focus, inpu
   margin: 24px 12px;
   padding: 4px 16px; }
 
+#award h1 {
+  top: 128px; }
+
+#award p {
+  top: 640px; }
+
+#eight h1 {
+  top: 550px; }
+
+#eight p {
+  top: 600px; }
+
+#clock h1 {
+  top: 550px; }
+
+#clock p {
+  top: 600px; }
+
+#water h1 {
+  top: 520px; }
+
+#water p {
+  top: 570px; }
+
+#bed h1 {
+  top: 520px; }
+
+#bed p {
+  top: 570px; }
+
 @media (max-width: 1200px) {
   .section-five p {
     font-size: 18px; }
@@ -1574,7 +1604,17 @@ textarea:hover, input:hover, textarea:active, input:active, textarea:focus, inpu
   .what-we-do .navi .arrow.left {
     left: 12px; }
   .what-we-do .navi .arrow.right {
-    right: 12px; } }
+    right: 12px; }
+  #award h1 {
+    top: 128px; }
+  #award p {
+    top: 640px; }
+  #eight h1, #clock h1, #water h1, #bed h1 {
+    position: initial; }
+  #eight p, #clock p, #water p, #bed p {
+    position: initial;
+    padding: 0 0 36px 0;
+    margin-bottom: 0; } }
 
 @media (max-height: 639px) and (orientation: landscape) {
   .nav {
