@@ -8,7 +8,8 @@ body {
 iframe {
   border: none;
   display: block;
-  width: 100%; }
+  width: 1px;
+  min-width: 100%; }
 
 .nav {
   display: block;
