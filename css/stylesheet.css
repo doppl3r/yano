@@ -558,7 +558,8 @@ iframe {
   margin: 0 auto; }
 
 .section-three .abs {
-  position: absolute; }
+  position: absolute;
+  outline: none; }
 
 .section-three .pad-top-64 {
   padding-top: 64px; }
@@ -848,7 +849,8 @@ iframe {
   max-width: 360px; }
 
 .section-four img.abs {
-  position: absolute; }
+  position: absolute;
+  outline: none; }
 
 .section-four img.full {
   display: block;
