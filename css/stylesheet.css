@@ -688,6 +688,10 @@ iframe {
 .section-three .owl-carousel img {
   width: 100%; }
 
+.section-three .owl-carousel.fix-height img {
+  max-height: 100%;
+  width: auto; }
+
 .section-three .owl-carousel.awards img {
   max-width: 100%;
   width: auto; }

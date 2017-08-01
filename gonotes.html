@@ -52,7 +52,58 @@
 						<h3>The Solution</h3>
                         <p>We developed a logo inspired by a common office paperclip. The form also resembled the letter’s “G” and “N” for GoNotes. We used illustrations to portray a wide variety of everyday small business owners while keeping the look feeling easy, bright, fresh and fun.</p>
 				    </div>
-                    <h3>More content coming soon!</h3>
+					<h3>Logo Exploration</h3>
+                    <div class="top"><img class="left-block max-full" src="img/18-logo-long1.png"/></div>
+                    <div class="bottom"><img class="left-block max-full" src="img/18-logo-long2.png"/></div>
+                    <h3 style="border-top: 1px solid #f1f1f1; padding-top: 64px;">Color Pallete</h3>
+                    <div class="flip-container one-third" ontouchstart="this.classList.toggle('hover');">
+						<div class="flipper">
+						<div class="front" style="background-color:#d75627;"></div>
+						<div class="back" style="background-color:#d75627;"><span>#d75627</span></div>
+						</div>
+					</div>
+					<div class="flip-container one-third" ontouchstart="this.classList.toggle('hover');">
+						<div class="flipper">
+						<div class="front" style="background-color:#515252;"></div>
+						<div class="back" style="background-color:#515252;"><span>#515252</span></div>
+						</div>
+					</div>
+					<div class="flip-container one-third" ontouchstart="this.classList.toggle('hover');">
+						<div class="flipper">
+						<div class="front" style="background-color:#34a4ea;"></div>
+						<div class="back" style="background-color:#34a4ea;"><span>#34a4ea</span></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="section-three" style="background-color: #4097d4;">
+                <div class="wrapper" style="padding:0;"><img class="fuller" src="img/18-video.png" style="display:block;"/></div>
+				<a href="#" class="abs" style="text-align: center; left:0%; right:0%; top: 36%;">
+					<img class="hover-fade fade-effect" src="img/18-play.png" style="max-width: 15%;"/>
+				</a>
+			</div>
+
+			<div class="section-three" style="background-color: #ffffff;">
+				<div class="wrapper">
+					<div class="owl-carousel fix-height">
+						<div class="item"><img src="img/18-gallery1.png"/></div>
+						<div class="item"><img src="img/18-gallery2.png"/></div>
+						<div class="item"><img src="img/18-gallery3.png"/></div>
+						<div class="item"><img src="img/18-gallery4.png"/></div>
+						<div class="item"><img src="img/18-gallery5.png"/></div>
+						<div class="item"><img src="img/18-gallery6.png"/></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="section-four shrink large"  id="bg2" style="background-color: #34a5eb;">
+				<div class="wrapper padding">
+					<h3 style="color: #fff; text-align: left; padding-top:40px; margin-bottom: 36px;">Website & Mobile</h3>
+					<img class="fuller stack eighty-five" src="img/18-window-bar.png" style="top: 10%;"
+							 data-bottom-top="top:10%;" data-top-bottom="top:20%; left: -5%"/>
+					<img class="fuller stack thirty" src="img/18-window2.png" style="top: 1%; left: auto; right: -5%;"
+							 data-bottom-top="top:10%;" data-top-bottom="top:50%; right: -5%;"/>
 				</div>
 			</div>
 
@@ -74,7 +125,7 @@
 					else { $('.header-two').css("height",$(window).height()); }
 					var s = skrollr.init( {  } ); //init parallax
 					skrollr.menu.init(s, {animate: true,easing: 'swing', scale: 2,duration: function(currentTop, targetTop) {return 1000;}});
-					$(".section-three .owl-carousel").owlCarousel({items:5,itemsDesktop : [5000,3],itemsDesktopSmall: [640,2],itemsTablet: [480,1],itemsMobile : false,navigation:false,slideSpeed : 300, paginationSpeed : 400,pagination: true,autoPlay: 3000	});
+					$(".section-three .owl-carousel").owlCarousel({items:7,itemsDesktop : [5000,1],itemsDesktopSmall: [640,1],itemsTablet: [480,1],itemsMobile : false,navigation:false,slideSpeed : 300, paginationSpeed : 400,pagination: true,autoPlay: 1500, singleItem: true	});
 					$(window).trigger("resize"); //resize window
 					$(window).load(function() {	if (isMobile()) s.destroy(); else s.refresh(); });
 				});
