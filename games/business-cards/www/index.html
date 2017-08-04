@@ -21,16 +21,19 @@
                         <div class="col-xs-6">
                             <p>Your Score</p>
                             <h1 id="currentTime">00.00</h1>
-                            <div id="retry" class="retry noselect" onclick="window.Game.retry()">retry</div>
+                            <h3 class="name">Your Best: <span id="your-best">00.00</span></h3>
+                            <div id="retry" class="action-button noselect" onclick="window.Game.retry()">Retry</div>
                         </div>
                         <div class="col-xs-6">
-                            <p>High Score</p>
+                            <p>Best Score</p>
                             <h1 id="highScore">00.00</h1>
-                            <h3 id="highScoreName">Name</h3>
+                            <h3 id="highScoreName" class="name">Name</h3>
+                            <div id="top-ten" class="action-button noselect">Top 10</div>
                         </div>
                     </div>
                     <div class="row top-border">
                         <div class="col-xs-12">
+                            <p style="font-size: 20px !important; line-height: 24px;">Pick a card. Find its match. Do it fast.</p>
                             <img src="img/game-logo.gif"/>
                         </div>
                     </div>
