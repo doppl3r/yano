@@ -34,7 +34,8 @@
 		this.setStage = function() {
 			//the stage should only be set after the assets have been preloaded
 			this.player = new Player();
-			this.stage.addChild(this.player);
+			this.obstacles = new Obstacles();
+			this.stage.addChild(this.player, this.obstacles);
 
 			//start game timer
 			if (!createjs.Ticker.hasEventListener("tick")) {

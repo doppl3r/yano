@@ -1,5 +1,10 @@
 {
   "manifest": [
-    { "id": "birds", "src": "imgs/birds.png" }
+    { "id": "birds", "src": "imgs/birds.png" },
+    { "id": "razer", "src": "imgs/razer.png" },
+    { "id": "pen", "src": "imgs/pen.png" },
+    { "id": "pencil-1", "src": "imgs/pencil-1.png" },
+    { "id": "pencil-2", "src": "imgs/pencil-2.png" },
+    { "id": "scissors", "src": "imgs/scissors.png" }
   ]
 }

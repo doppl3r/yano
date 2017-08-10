@@ -89,7 +89,6 @@
         if ((newTime / 10) < yourBest || yourBest == 0){ //divide by 10 to compare with 4 digits
             document.getElementById('your-best').innerHTML = window.timer.toString(newTime);
         }
-        console.log("your_best: "+yourBest+", newTime: "+newTime);
         //update server best score
         if (window.timer.play == false){
             var ref = this.db.ref('leaderboard/score');
