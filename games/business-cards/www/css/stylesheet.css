@@ -22,7 +22,7 @@ input[type="text"] { border: 2px solid #cccccc !important; margin: 12px 0; }
 }
 .ok:hover { opacity: 0.5; }
 .cancel { display: none !important; }
-.name { font-size: 24px; margin-top: 0px; }
+.name { font-size: 24px; width: 100%; margin: 0 auto; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .action-button {
     background-color: #f3f3f3;
     border-radius: 3px;
@@ -41,9 +41,8 @@ input[type="text"] { border: 2px solid #cccccc !important; margin: 12px 0; }
 .row { margin-right: 0; margin-left: 0; display: flex; align-items: center; width: 100%; }
 .alertify .dialog nav, .alertify .alert nav { text-align: center !important; }
 .alertify .dialog ul { list-style: none; padding: 0; font-size: 21px; }
-.alertify .dialog ul li:nth-child(odd) { background-color: #f1f1f1; }
+.alertify .dialog ul li:nth-child(odd) { background-color: #f1f1f1; width: 100%; margin: 0 auto; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .top-border { border-top: 1px solid #cccccc; padding-top: 32px; margin-top: 32px; }
-
 #currentTime { color: #e67c49; }
 
 @media(max-width:767px){ /*mobile view*/
