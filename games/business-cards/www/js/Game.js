@@ -75,13 +75,8 @@
         };
         firebase.initializeApp(config);
         this.db = firebase.database();
+        this.populateDatabase();
         this.updateHighScoreText();
-    }
-    Game.prototype.setHighScore = function(newName, newTime){
-        this.db.ref('leaderboard/score').set({
-            name: newName,
-            time: newTime
-        });
     }
     Game.prototype.checkHighScore = function(newTime){
         //update session best score
@@ -89,46 +84,73 @@
         if ((newTime / 10) < yourBest || yourBest == 0){ //divide by 10 to compare with 4 digits
             document.getElementById('your-best').innerHTML = window.timer.toString(newTime);
         }
-        //update server best score
-        if (window.timer.play == false){
-            var ref = this.db.ref('leaderboard/score');
-            ref.once('value').then(function(snapshot){
-                var score = snapshot.val().time;
-                if (newTime < score){
-                    alertify.defaultValue("name")
-                    .okBtn("Submit high score")
-                    .cancelBtn("Cancel")
-                    .prompt("" +
-                        "<h3>New High Score!</h3>" +
-                        "<h1>"+window.timer.toString(newTime)+"</h1>",
-                        function (val, ev) {
-                            ev.preventDefault();
-                            window.Game.setHighScore(val, newTime);
-                            window.Game.setCurrentTime(0);
-                            window.Game.updateHighScoreText();
-                            window.Game.toggleRetryButton(true);
-                        }, function(ev){
-                            ev.preventDefault();
-                            window.Game.setCurrentTime(0);
-                            window.Game.updateHighScoreText();
-                            window.Game.toggleRetryButton(true);
-                        }
-                    );
+
+        //pull top 10 and check for new high score
+        var ref = this.db.ref('leaderboard');
+        ref.orderByChild('time').limitToFirst(10).once('value', function(snapshot){
+            var isTopScore = false;
+            var key = null;
+            snapshot.forEach(function(childSnapshot){ //check if within top 10 scores
+                if (newTime < parseInt(childSnapshot.val().time)){
+                    key = childSnapshot.key;
+                    return true; //break loop
                 }
-                else window.Game.toggleRetryButton(true);
             });
-        }
+            if (key != null){ //a key without a value will not make top 10
+                alertify.defaultValue("name")
+                .okBtn("Submit high score")
+                .cancelBtn("Cancel")
+                .prompt("" +
+                    "<h3>New High Score!</h3>" +
+                    "<h1>"+window.timer.toString(newTime)+"</h1>",
+                    function (val, ev) {
+                        ev.preventDefault();
+                        ref.push({ "name": val, "time": newTime });
+                        window.Game.setCurrentTime(0);
+                        window.Game.updateHighScoreText();
+                        window.Game.toggleRetryButton(true);
+                    }, function(ev){
+                        ev.preventDefault();
+                        window.Game.setCurrentTime(0);
+                        window.Game.updateHighScoreText();
+                        window.Game.toggleRetryButton(true);
+                    }
+                );
+            }
+            else window.Game.toggleRetryButton(true);
+        });
     }
     Game.prototype.setCurrentTime = function(forceTime){
         if (window.timer.play == true || forceTime != null){
             document.getElementById('currentTime').innerHTML = window.timer.toString(forceTime != null ? forceTime : null);
         }
     }
+    Game.prototype.populateDatabase = function(){
+        //insure top 10 exists
+        var ref = this.db.ref('leaderboard');
+        ref.orderByChild('time').limitToFirst(10).once('value', function(snapshot){
+            if (snapshot.numChildren() < 10){
+                ref.push({ "name": "Yano", "time": 99999 });
+                window.Game.populateDatabase(); //recursion
+            }
+        });
+    }
     Game.prototype.updateHighScoreText = function(){
-        var ref = this.db.ref('leaderboard/score');
-        ref.once('value').then(function(snapshot){
-            document.getElementById('highScore').innerHTML = window.timer.toString(snapshot.val().time);
-            document.getElementById('highScoreName').innerHTML = snapshot.val().name;
+        var ref = this.db.ref('leaderboard');
+        ref.orderByChild('time').limitToFirst(1).once('value', function(snapshot){
+            snapshot.forEach(function(childSnapshot){
+                document.getElementById('highScore').innerHTML = window.timer.toString(childSnapshot.val().time);
+                document.getElementById('highScoreName').innerHTML = childSnapshot.val().name;
+            });
+        });
+    }
+    Game.prototype.getBestScore = function(){
+        var bestScore = 99999;
+        var ref = this.db.ref('leaderboard');
+        ref.orderByChild('time').limitToFirst(1).once('value', function(snapshot){
+            snapshot.forEach(function(childSnapshot){
+                bestScore = childSnapshot.val().time;
+            });
         });
     }
     Game.prototype.toggleRetryButton = function(version){
@@ -140,6 +162,15 @@
             document.getElementById('retry').style.backgroundColor = "#f3f3f3";
             document.getElementById('retry').style.color = "#666666";
         }
+    }
+    Game.prototype.showTopTen = function(){
+        var htmlElem = "";
+        var ref = this.db.ref('leaderboard');
+        ref.orderByChild('time').limitToFirst(10).once('value', function(snapshot){
+            htmlElem += "<ul>";
+            snapshot.forEach(function(childSnapshot){ htmlElem += "<li>"+childSnapshot.val().name+": "+childSnapshot.val().time+"</li>";});
+            htmlElem += "</ul>";
+        }).then(function(){ alertify.okBtn('Close').confirm(htmlElem); });
     }
     //create prototype of self
     window.Game = new Game();
