@@ -164,11 +164,16 @@
         }
     }
     Game.prototype.showTopTen = function(){
-        var htmlElem = "";
+        var htmlElem = "<h3>Top 10 Scores</h3>";
+        var rank = 0; //rank
         var ref = this.db.ref('leaderboard');
         ref.orderByChild('time').limitToFirst(10).once('value', function(snapshot){
             htmlElem += "<ul>";
-            snapshot.forEach(function(childSnapshot){ htmlElem += "<li>"+childSnapshot.val().name+": "+childSnapshot.val().time+"</li>";});
+            snapshot.forEach(function(childSnapshot){
+                rank++; //increment rank
+                htmlElem += "<li>"+rank+") "+childSnapshot.val().name+": "+
+                window.timer.toString(childSnapshot.val().time)+"</li>";
+            });
             htmlElem += "</ul>";
         }).then(function(){ alertify.okBtn('Close').confirm(htmlElem); });
     }
