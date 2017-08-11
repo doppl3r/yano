@@ -168,13 +168,13 @@
         var rank = 0; //rank
         var ref = this.db.ref('leaderboard');
         ref.orderByChild('time').limitToFirst(10).once('value', function(snapshot){
-            htmlElem += "<ul>";
             snapshot.forEach(function(childSnapshot){
                 rank++; //increment rank
-                htmlElem += "<li>"+rank+") "+childSnapshot.val().name+": "+
-                window.timer.toString(childSnapshot.val().time)+"</li>";
+                htmlElem += "<div class='row'>"+
+                "<div class='col-xs-6'>"+rank+") "+childSnapshot.val().name+"</div>"+
+                "<div class='col-xs-6'>"+window.timer.toString(childSnapshot.val().time)+"</div>";
+                htmlElem += "</div>";
             });
-            htmlElem += "</ul>";
         }).then(function(){ alertify.okBtn('Close').confirm(htmlElem); });
     }
     //create prototype of self

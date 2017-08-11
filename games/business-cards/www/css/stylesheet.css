@@ -40,8 +40,9 @@ input[type="text"] { border: 2px solid #cccccc !important; margin: 12px 0; }
 .wrapper { width: 1260px; margin: auto auto; }
 .row { margin-right: 0; margin-left: 0; display: flex; align-items: center; width: 100%; }
 .alertify .dialog nav, .alertify .alert nav { text-align: center !important; }
-.alertify .dialog ul { list-style: none; padding: 0; font-size: 21px; }
-.alertify .dialog ul li:nth-child(odd) { background-color: #f1f1f1; width: 100%; margin: 0 auto; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.alertify .dialog .row { font-size: 21px; }
+.alertify .dialog .row [class*="col-"] { text-align: left; padding: 0 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.alertify .dialog .row:nth-child(odd) { background-color: #f1f1f1; margin: 0 auto; }
 .top-border { border-top: 1px solid #cccccc; padding-top: 32px; margin-top: 32px; }
 #currentTime { color: #e67c49; }
 
