@@ -41,8 +41,10 @@ input[type="text"] { border: 2px solid #cccccc !important; margin: 12px 0; }
 .row { margin-right: 0; margin-left: 0; display: flex; align-items: center; width: 100%; }
 .alertify .dialog nav, .alertify .alert nav { text-align: center !important; }
 .alertify .dialog .row { font-size: 21px; }
-.alertify .dialog .row [class*="col-"] { text-align: left; padding: 0 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.alertify .dialog .row [class*="col-"] { text-align: left; padding: 0 12px; /*white-space: nowrap; overflow: hidden; text-overflow: ellipsis;*/ }
 .alertify .dialog .row:nth-child(odd) { background-color: #f1f1f1; margin: 0 auto; }
+.alertify .dialog > * { width: 400px; }
+.alertify .dialog img { max-width: 100%; margin: auto; display: block; }
 .top-border { border-top: 1px solid #cccccc; padding-top: 32px; margin-top: 32px; }
 #currentTime { color: #e67c49; }
 

@@ -200,7 +200,7 @@ iframe { border: none; display: block; width: 1px; min-width: 100%; }
 .section-five .cell.image img { display: block; width: 100%; }
 
 .section-game { background-color: #ffffff; }
-.section-game .fullscreen { display: -webkit-inline-box; display: -webkit-inline-flex; display: -moz-inline-box; display: -ms-inline-flexbox; display: inline-flex; -webkit-align-self: auto; position: relative; width: 100%; }
+.section-game .fullscreen { display: -webkit-inline-box; display: -webkit-inline-flex; display: -moz-inline-box; display: -ms-inline-flexbox; display: inline-flex; -webkit-align-self: auto; position: relative; width: 100%; min-height: 640px; }
 .section-game .wrapper { max-width: 1260px; padding: 96px 0; margin: auto auto; flex: 1; width: 100%; }
 .section-game .arrow { position: absolute; color: #929394;  font-size: 15px; text-align: center; left: 0; right: 0; bottom: 0; }
 .section-game .arrow span { display: block; text-transform: uppercase; }
@@ -415,7 +415,7 @@ textarea:hover, input:hover, textarea:active, input:active, textarea:focus, inpu
         p { position: initial; padding: 0 0 36px 0; margin-bottom: 0; }
     }
 }
-@media(max-height: 639px) and (orientation: landscape){
+@media(max-height: 800px) and (orientation: landscape){
     .nav { position: initial; }
     .section-game .fullscreen { display: block; }
     .section-game .wrapper { padding-top: 0; }

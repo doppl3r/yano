@@ -1010,7 +1010,8 @@ iframe {
   display: inline-flex;
   -webkit-align-self: auto;
   position: relative;
-  width: 100%; }
+  width: 100%;
+  min-height: 640px; }
 
 .section-game .wrapper {
   max-width: 1260px;
@@ -1622,7 +1623,7 @@ textarea:hover, input:hover, textarea:active, input:active, textarea:focus, inpu
     padding: 0 0 36px 0;
     margin-bottom: 0; } }
 
-@media (max-height: 639px) and (orientation: landscape) {
+@media (max-height: 800px) and (orientation: landscape) {
   .nav {
     position: initial; }
   .section-game .fullscreen {

@@ -77,6 +77,22 @@
         this.db = firebase.database();
         this.populateDatabase();
         this.updateHighScoreText();
+
+        alertify.defaultValue("name")
+        .okBtn("Submit high score")
+        .cancelBtn("Cancel")
+        .prompt("" +
+            "<div class='row'>"+
+                "<div class='col-xs-6'>"+
+                    "<img src='img/top-ten-graphic.jpg'>"+
+                "</div>"+
+                "<div class='col-xs-6'>"+
+                    "<h3>New High Score!</h3>" +
+                    "<h1>"+window.timer.toString(23000)+"</h1>"+
+                "</div>"+
+            "</div>",
+            function (val, ev) { ev.preventDefault(); }, function(ev){ ev.preventDefault(); }
+        );
     }
     Game.prototype.checkHighScore = function(newTime){
         //update session best score
