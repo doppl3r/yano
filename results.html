@@ -15,31 +15,26 @@
 		<div class="nav"></div>
 
 		<div class="section-animation" id="award" style="background-color: #f3f3f3; padding-top: 80px;">
-			<iframe id="iframe_award" src="animations/award.html" height="640px"></iframe>
 			<h1>Award winning results</h1>
 			<p>International award-winning work spanning over 20 years</p>
 		</div>
 		
 		<div class="section-animation" id="eight" style="background-color: #4e93db; padding-bottom: 48px;">
-			<iframe id="iframe_eight" src="animations/eight.html" height="640px"></iframe>
 			<h1 class="white">$8 Billion in Online Sales</h1>
 			<p class="white">Sold online for our clients</p>
 		</div>
 		
 		<div class="section-animation" id="clock" style="background-color: #4ecfdb; padding-bottom: 48px;">
-			<iframe id="iframe_clock" src="animations/clock.html" height="640px"></iframe>
 			<h1 class="white">$300 Million in Purchases</h1>
 			<p class="white">Converted for our clients on mobile apps</p>
 		</div>
 
 		<div class="section-animation" id="water" style="background-color: #bddb4e;">
-			<iframe id="iframe_water" src="animations/water.html" height="640px"></iframe>
 			<h1 class="white">400% Sales Growth in One Year</h1>
 			<p class="white">Growth for our pool industry clients</p>
 		</div>
 
 		<div class="section-animation" id="bed" style="background-color: #6452ad;">
-			<iframe id="iframe_bed" src="animations/bed.html" height="640px"></iframe>
 			<h1 class="white">$1 Billion in One Year</h1>
 			<p class="white">Sold online for our travel clients</p>
 		</div>
@@ -54,28 +49,24 @@
 		<script>
 			$( document ).ready(function() {
 			    $('.nav').load('nav.html');
-                $('.footer').load('footer.html');
-			});
-
-			$(window).on("scroll", function (event) {
-				var wY = $(window).scrollTop();
-				var wH = $(window).height();
-				if (!isMobile()){
-					$('.section-animation').each(function(i){
-						var animation = document.getElementById("iframe_"+$(this).attr('id')).contentWindow.exportRoot;
-						if (isScrolledIntoView("#"+$(this).attr('id'))){
-							$(this).find('iframe').fadeIn(2000);
-							animation.paused=false;
-						}
-						else {
-							$(this).find('iframe').fadeOut(0);
-							animation.paused=true;
-							animation.gotoAndStop(0);
-						}
+				$('.footer').load('footer.html');
+				
+				$('#award').prepend('<iframe id="iframe_award" src="animations/award.html" height="640px"></iframe>');
+				$('#award iframe').on("load",function(){ 
+					$('#eight').prepend('<iframe id="iframe_eight" src="animations/eight.html" height="640px"></iframe>'); 
+					$('#eight iframe').on("load", function(){ 
+						$('#clock').prepend('<iframe id="iframe_clock" src="animations/clock.html" height="640px"></iframe>');
+						$('#clock iframe').on("load", function(){ 
+							$('#water').prepend('<iframe id="iframe_water" src="animations/water.html" height="640px"></iframe>');
+							$('#water iframe').on("load", function(){
+								$('#bed').prepend('<iframe id="iframe_bed" src="animations/bed.html" height="640px"></iframe>');
+							});
+						});
 					});
-				}
+				});
 			});
 
+			$(window).on("scroll", function (event) { setState(); });
 			$(window).on("load",function() {
 				if (isAndroid()){
 					var iframe_award = document.getElementById("iframe_award").contentWindow;
@@ -95,6 +86,24 @@
 					iframe_bed.exportRoot.gotoAndStop(0);
 				}
 			});
+			function setState(){
+				var wY = $(window).scrollTop();
+				var wH = $(window).height();
+				if (!isMobile()){
+					$('.section-animation').each(function(i){
+						var animation = document.getElementById("iframe_"+$(this).attr('id')).contentWindow.exportRoot;
+						if (isScrolledIntoView("#"+$(this).attr('id'))){
+							$(this).find('iframe').fadeIn(2000);
+							animation.paused=false;
+						}
+						else {
+							$(this).find('iframe').fadeOut(0);
+							animation.paused=true;
+							animation.gotoAndStop(0);
+						}
+					});
+				}
+			}
 			function isScrolledIntoView(elem) {
 				var docViewTop = $(window).scrollTop();
 				var docViewBottom = docViewTop + $(window).height();
