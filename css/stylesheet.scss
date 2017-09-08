@@ -423,6 +423,10 @@ textarea:hover, input:hover, textarea:active, input:active, textarea:focus, inpu
 }
 
 @media(max-width:480px){
+    .section-animation {
+        display: inline-block;
+        width: 100%;
+    }
 	.nav {  overflow:visible; }
 	.nav .right { }
 	.nav .right .button { display: block; margin: 16px 16px 16px auto; right: 0px; }

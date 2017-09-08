@@ -53,13 +53,24 @@
 				
 				$('#award').prepend('<iframe id="iframe_award" src="animations/award.html" height="640px"></iframe>');
 				$('#award iframe').on("load",function(){ 
+					//if (isMobile()) $('#award iframe').height($(window).width());
 					$('#eight').prepend('<iframe id="iframe_eight" src="animations/eight.html" height="640px"></iframe>'); 
 					$('#eight iframe').on("load", function(){ 
+						//if (isMobile()) $('#eight iframe').height($(window).width());
 						$('#clock').prepend('<iframe id="iframe_clock" src="animations/clock.html" height="640px"></iframe>');
 						$('#clock iframe').on("load", function(){ 
+							//if (isMobile()) $('#clock iframe').height($(window).width());
 							$('#water').prepend('<iframe id="iframe_water" src="animations/water.html" height="640px"></iframe>');
 							$('#water iframe').on("load", function(){
+								//if (isMobile()) $('#water iframe').height($(window).width());
 								$('#bed').prepend('<iframe id="iframe_bed" src="animations/bed.html" height="640px"></iframe>');
+								$('#bed iframe').on("load", function(){
+									//if (isMobile()) $('#bed iframe').height($(window).width());
+									if (isMobile()){ 
+										$('iframe').height($(window).width());
+										$('iframe').css({ 'margin-top':'120px'});
+									}
+								});
 							});
 						});
 					});
