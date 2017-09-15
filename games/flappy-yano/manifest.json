@@ -8,6 +8,7 @@
     { "id": "scissors", "src": "imgs/scissors.png" },
     { "id": "bomb", "src": "imgs/bomb.png" },
     { "id": "spike", "src": "imgs/spike.png" },
+    { "id": "city", "src": "imgs/city.png" },
     { "id": "icon-facebook", "src": "imgs/icon-facebook.png" },
     { "id": "icon-google", "src": "imgs/icon-google.png" },
     { "id": "icon-instagram", "src": "imgs/icon-instagram.png" },
