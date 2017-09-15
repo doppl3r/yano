@@ -22,7 +22,7 @@
 			//init stage from canvas
 			this.canvas = document.getElementById("gameCanvas");
 			this.stage = new createjs.StageGL(this.canvas, { antialias: true });
-			this.stage.setClearColor("#ffffff");
+			this.stage.setClearColor("#e0f7fa"); //original #ffffff
 			this.stage.enableMouseOver(60);
 			createjs.Touch.enable(this.stage);
 			this.resizeCanvas();

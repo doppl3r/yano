@@ -5,6 +5,15 @@
     { "id": "pen", "src": "imgs/pen.png" },
     { "id": "pencil-1", "src": "imgs/pencil-1.png" },
     { "id": "pencil-2", "src": "imgs/pencil-2.png" },
-    { "id": "scissors", "src": "imgs/scissors.png" }
+    { "id": "scissors", "src": "imgs/scissors.png" },
+    { "id": "bomb", "src": "imgs/bomb.png" },
+    { "id": "spike", "src": "imgs/spike.png" },
+    { "id": "icon-facebook", "src": "imgs/icon-facebook.png" },
+    { "id": "icon-google", "src": "imgs/icon-google.png" },
+    { "id": "icon-instagram", "src": "imgs/icon-instagram.png" },
+    { "id": "icon-linkedin", "src": "imgs/icon-linkedin.png" },
+    { "id": "icon-pinterest", "src": "imgs/icon-pinterest.png" },
+    { "id": "icon-twitter", "src": "imgs/icon-twitter.png" },
+    { "id": "icon-youtube", "src": "imgs/icon-youtube.png" }
   ]
 }
