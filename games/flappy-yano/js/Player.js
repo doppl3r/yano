@@ -33,17 +33,12 @@
             this.respawn();
         };
         this.tick = function (delta, map) {
-            //check collision using 'ndgmr.Collision.js' provided by Olaf Horstmann
-            /*var tempChest;
-            for (var i=0; i<window.Game.chestManager.children.length; i++){
-                tempChest = window.Game.chestManager.getChildAt(i); //get temporary index
-                if (ndgmr.checkRectCollision(this, tempChest)){
-
-                }
-            }*/
             if (this.pauseJump != null) this.y = this.gravity.pull(); //move player
             //prevent play from falling off screen
-            if (this.y > window.Game.getHeight()) this.respawn();
+            if (this.y > window.Game.getHeight()){
+                window.Game.things.resetLevel();
+                this.respawn();
+            }
             //flap the wings
             if (this.animate != false){
                 this.animate = false;
