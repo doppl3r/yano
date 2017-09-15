@@ -15,7 +15,9 @@
 		};
 		this.tick = function(event){
 			this.delta = event.delta; //elapsedTimeInMS / 1000msPerSecond
+			this.background.tick(this.delta);
 			this.player.tick(this.delta);
+			this.things.tick(this.delta);
 			this.stage.update();
 		};
 		this.initStage = function(){
@@ -33,9 +35,10 @@
 		};
 		this.setStage = function() {
 			//the stage should only be set after the assets have been preloaded
+			this.background = new Background();
 			this.player = new Player();
-			this.obstacles = new Obstacles();
-			this.stage.addChild(this.player, this.obstacles);
+			this.things = new Things();
+			this.stage.addChild(this.background, this.player, this.things);
 
 			//start game timer
 			if (!createjs.Ticker.hasEventListener("tick")) {
@@ -103,6 +106,7 @@
 			this.assetManager.preload.on("complete", function(){ window.Game.setStage(); window.Game.playMusic(); });
 			this.assetManager.preload.on("progress", function(){ window.Game.assetManager.updateLoading(); window.Game.stage.update(); });
 		};
+		this.getRandomInt = function(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; };
 
 		//initiate prototype variables
 		this.init();
